@@ -30,7 +30,7 @@ body {
   margin-left: 10%;
   margin-right: 10%;
   font-family: "Hacked", sans-serif;
-  font-size: 68px;
+  font-size: 76px;
   color: #ffee00;
   text-shadow: 2px 2px 4px #000000;
   display: block;
@@ -51,12 +51,9 @@ input {
   border: none;
 }
 .inputBox {
-  width: 50%;
-  height: 40px;
+  width: 100%;
+  height: 40%;
   padding: 10px;
-  margin-top: 10px;
-  margin-left: 25%;
-  margin-right: 25%;
   font-size: 15px;
   font-style: italic;
   font-family: "FutureTechno", sans-serif;
@@ -66,19 +63,7 @@ input {
   text-shadow: -1px -1px 0px #485c5a, 1px 1px 4px #00e6f6;
   text-align: center;
   position: relative;
-  border-top: 2px solid #000000;
-  border-left: 2px solid #000000;
-  border-right: 2px solid #000000;
-  border-image: linear-gradient(
-      to left,
-      #831faa,
-      #ffee00,
-      #00e6f6,
-      #ffee00,
-      #831faa
-    )
-    1 10%;
-  box-shadow: 3px -3px 5px #00e6f6;
+  box-shadow: 0 -1px 5px 1px #00e6f6;
 }
 .footer {
   border-top: 2px solid black;
@@ -103,10 +88,6 @@ input {
   bottom: 0;
   left: 0;
   text-align: center;
-}
-
-.radioButtonOptionLabels {
-  padding-right: 10px;
 }
 .inputList {
   background: rgba(36, 39, 123, 0.85);
@@ -204,14 +185,9 @@ section {
   color: #00e6f6;
   text-shadow: -1px -1px 1px #485c5a, 1px 1px 4px #ffee00;
 }
-.itemNameInputField {
-  height: 40px;
-  width: 100%;
-  display: flex;
-}
-.descInputField {
-  height: 70px;
-  width: 50%;
+.inputFieldsFull {
+  height: 100px;
+  width: 60%;
   margin: 10px auto;
   border: 2px solid #000000;
   border-image: linear-gradient(
@@ -223,16 +199,17 @@ section {
       #831faa
     )
     1 10%;
-  display: flex;
+  display: block;
 }
 .itemDescInputField {
   font-family: "FutureTechno", sans-serif;
   color: #ffee00;
   background-color: rgba(36, 39, 123, 0.85);
   border: none;
+  height: 60%;
   width: 100%;
   text-shadow: -1px -1px 0px #485c5a, 1px 1px 4px #00e6f6;
-  box-shadow: 3px 3px 5px #00e6f6;
+  box-shadow: 0 1px 5px 1px #00e6f6;
   text-align: center;
 }
 .topInfo {
@@ -756,8 +733,16 @@ section {
   margin-top: 5px;
   width: 40px;
   height: 40px;
-  margin-right: 48%;
+  margin-left: 5px;
+  margin-right: 47%;
   display: flex;
+}
+.toggleMusic {
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 40px;
+  height: 40px;
 }
 .loginButton {
   width: 6%;
@@ -814,6 +799,11 @@ section {
   font-size: 28px;
   margin-top: 1%;
   margin-bottom: 1%;
+}
+.audioControls {
+  margin-left: -24%;
+  margin-bottom: -11%;
+  visibility: hidden;
 }
 .emailInputField #emailInput,
 #passwordInput,

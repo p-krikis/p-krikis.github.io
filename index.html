@@ -12,7 +12,8 @@
   <body id="body">
     <div class="headers" id="headers">
       <input type="image" src="images/5.png" class="appearanceButton" id="appearanceButton">
-      <input type="image" src="images/7.png" class="removeAnim" id="removeAnim">
+      <input type="image" src="images/musicOff.png" class="toggleMusic" id="toggleMusic">
+      <input type="image" src="images/7.png" class="removeAnim" id="removeAnim">      
       <button type="button" class="loginButton" id="loginButton" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
       <button type="button" class="signupButton" id="signupButton" data-bs-toggle="modal" data-bs-target="#signupModal">Sign up</button>
       <button type="button" class="signoutButton" id="signoutButton">Sign out</button>
@@ -27,7 +28,7 @@
           </div>
         </section>
         <section>
-          <div class="itemNameInputField">
+          <div class="inputFieldsFull">
             <input
               type="text"
               class="inputBox"
@@ -36,8 +37,6 @@
               placeholder="enter item name"
               required
             />
-          </div>
-          <div class="descInputField">
             <input
               placeholder="description of item..."
               maxlength="256"
@@ -118,6 +117,9 @@
           <button type="button" class="loadButton" id="loadButton">LOAD</button>
         </div>
       </main>
+      <audio controls id="music" volume="0.5" class="audioControls"> <!-- add autoplay to automatically start loop -->
+        <source src="sfx/bgMusicCompressed.mp3" type="audio/mpeg">
+      </audio>
       <footer class="footer">
         <p>18/05/23 basic site built | 19/05/23 added logic | 22/05/23 style rework | 23/05/23 added user handling logic | 24/05/23 added dark/light mode</p>
       </footer>

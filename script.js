@@ -39,6 +39,7 @@ window.onload = function () {
   const loginSubmit = document.querySelector(".loginSubmit");
   const signupSubmit = document.querySelector(".signupSubmit");
   const toggleAnim = document.querySelector(".removeAnim");
+  const toggleMusic = document.querySelector(".toggleMusic");
 
   logoutButton.style.display = "none";
 
@@ -104,6 +105,19 @@ window.onload = function () {
     }
     itemListFull[0].children[index].innerHTML =
       itemName + '<p class="descList" id="descList">' + itemDesc + "</p>";
+  });
+
+  toggleMusic.addEventListener("click", function () {
+    var img = document.getElementById("toggleMusic");
+    if (img.src.match("images/musicOff.png")) {
+      img.src = "images/musicOn.png";
+      document.getElementById("music").play();
+      document.querySelector(".audioControls").style.visibility = "visible";
+    } else {
+      img.src = "images/musicOff.png";
+      document.getElementById("music").pause();
+      document.querySelector(".audioControls").style.visibility = "hidden";
+    }
   });
 
   toggleAnim.addEventListener("click", function () {
@@ -175,7 +189,7 @@ window.onload = function () {
       document.querySelector(".signupSubmit").style.color = "#33a7ff";
       document.querySelector(".signupCancel").style.color = "#33a7ff";
       document.querySelector(".removeAnim").style.display = "none";
-      document.querySelector(".appearanceButton").style.marginRight = "50%";
+      document.querySelector(".toggleMusic").style.marginRight = "49.4%";
     } else {
       img.src = "images/5.png";
       document.getElementById("body").style.backgroundImage =
@@ -228,7 +242,7 @@ window.onload = function () {
       document.querySelector(".signupSubmit").style.color = "#18d5e2be";
       document.querySelector(".signupCancel").style.color = "#18d5e2be";
       document.querySelector(".removeAnim").style.display = "flex";
-      document.querySelector(".appearanceButton").style.marginRight = "0";
+      document.querySelector(".toggleMusic").style.marginRight = "0";
     }
   });
   signupSubmit.addEventListener("click", function () {
