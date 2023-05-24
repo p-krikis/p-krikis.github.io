@@ -801,8 +801,8 @@ section {
   margin-bottom: 1%;
 }
 .audioControls {
-  margin-left: -24%;
-  margin-bottom: -11%;
+  margin-left: -23%;
+  margin-bottom: -10%;
   visibility: hidden;
 }
 .emailInputField #emailInput,
@@ -875,4 +875,28 @@ section {
   color: #ffee00;
   text-shadow: -2px -2px 5px #485c5a, 2px 2px 5px #18d5e2be,
     -2px 2px 5px #c72267be;
+}
+audio::-webkit-media-controls-panel {
+  background-color: #24277b;
+  color: #0ce94e;
+}
+audio {
+  border: #ffee00 2px solid;
+  border-radius: 28px;
+  box-shadow: 3px 3px 5px #00e6f6c5;
+}
+audio::-webkit-media-controls-current-time-display {
+  color: #ffee00;
+  font-family: "B81", sans-serif;
+  margin-top: -3px;
+  margin-left: 10px;
+}
+audio::-webkit-media-controls-time-remaining-display {
+  color: #c72267;
+  font-family: "B81", sans-serif;
+  margin-top: -3px;
+}
+audio::-webkit-media-controls-play-button {
+  background-color: #3a3eaade;
+  border-radius: 50%;
 }
