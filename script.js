@@ -111,12 +111,12 @@ window.onload = function () {
     var img = document.getElementById("toggleMusic");
     if (img.src.match("images/musicOff.png")) {
       img.src = "images/musicOn.png";
-      document.getElementById("music").play();
       document.querySelector(".audioControls").style.visibility = "visible";
+      document.getElementById("music").play();
     } else {
       img.src = "images/musicOff.png";
-      document.getElementById("music").pause();
       document.querySelector(".audioControls").style.visibility = "hidden";
+      document.getElementById("music").pause();
     }
   });
 
