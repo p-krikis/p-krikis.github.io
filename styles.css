@@ -1,0 +1,868 @@
+.bg {
+  height: 100%;
+  width: 100%;
+}
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+body {
+  background-image: url("https://giffiles.alphacoders.com/211/211748.gif");
+  background-size: 100%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+.container {
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 20px;
+  max-width: 80%;
+  align-items: center;
+}
+.webpageTitle {
+  margin-top: -30px;
+  margin-bottom: 5px;
+  width: 80%;
+  height: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: "Cyberway", sans-serif;
+  font-size: 68px;
+  color: #ffee00;
+  text-shadow: 2px 2px 4px #000000;
+  display: block;
+  text-align: center;
+  text-shadow: -3px -3px 6px #485c5a, 3px 3px 6px #00e6f6;
+}
+.actionButtons {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  max-width: 500px;
+  text-align: center;
+}
+input {
+  border: none;
+}
+.inputBox {
+  width: 50%;
+  height: 40px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 25%;
+  margin-right: 25%;
+  font-size: 15px;
+  font-style: italic;
+  font-family: "FutureTechno", sans-serif;
+  border-top-left-radius: 2px;
+  background-color: rgba(36, 39, 123, 0.85);
+  color: #ffee00;
+  text-shadow: -1px -1px 0px #485c5a, 1px 1px 4px #00e6f6;
+  text-align: center;
+  position: relative;
+  border-top: 2px solid #000000;
+  border-left: 2px solid #000000;
+  border-right: 2px solid #000000;
+  border-image: linear-gradient(
+      to left,
+      #831faa,
+      #ffee00,
+      #00e6f6,
+      #ffee00,
+      #831faa
+    )
+    1 10%;
+  box-shadow: 3px -3px 5px #00e6f6;
+}
+.footer {
+  border-top: 2px solid black;
+  border-image: linear-gradient(
+      to left,
+      #831faa,
+      #ffee00,
+      #00e6f6,
+      #ffee00,
+      #831faa
+    )
+    1 10%;
+  text-align: center;
+  font-family: "Revamped", sans-serif;
+  font-size: 10px;
+  color: #ffee00;
+  text-shadow: -1px -1px 0px #485c5a, 1px 1px 4px #00e6f6;
+  width: 100%;
+  height: 40px;
+  padding-top: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.radioButtonOptionLabels {
+  padding-right: 10px;
+}
+.inputList {
+  background: rgba(36, 39, 123, 0.85);
+  padding-top: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 3px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+  border-top: 2px inset #818181;
+  border-left: 2px inset #818181;
+  height: 250px;
+  width: 80%;
+  max-height: 250px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 5px #831faa;
+}
+ol {
+  flex: 1;
+  overflow-y: auto;
+}
+li {
+  font-family: "Revamped", sans-serif;
+  color: #ffee00;
+  font-size: 15px;
+  text-shadow: -1px -1px 1px #485c5a, 1px 1px 4px #00e6f6;
+}
+
+.optionPanels {
+  height: 90px;
+}
+.desc {
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: -10px;
+  font-family: "Revamped", sans-serif;
+  font-size: 18px;
+  background-color: #24277b;
+  color: #ffee00;
+  text-align: center;
+  font-size: 20px;
+  background: linear-gradient(
+    135deg,
+    transparent 10%,
+    #831faa 35%,
+    #831faa 65%,
+    transparent 90%
+  );
+  text-shadow: -1px -1px 1px #485c5a, 1px 1px 4px #00e6f6;
+  position: relative;
+}
+.desc::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 85%;
+  height: 1px;
+  background-color: rgba(255, 238, 0, 0.6);
+}
+.desc::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85%;
+  height: 1px;
+  background-color: rgba(255, 238, 0, 0.6);
+}
+button {
+  font-family: system-ui, sans-serif;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.1em 0.3em;
+  font-weight: bold;
+  border: none;
+}
+section {
+  width: 100%;
+  height: 540px;
+  display: box;
+}
+.descList {
+  font-family: "FutureTechno", sans-serif;
+  font-style: italic;
+  text-align: left;
+  font-size: 13px;
+  margin-top: 2px;
+  margin-left: 15px;
+  margin-bottom: 3px;
+  margin-right: 5px;
+  color: #00e6f6;
+  text-shadow: -1px -1px 1px #485c5a, 1px 1px 4px #ffee00;
+}
+.itemNameInputField {
+  height: 40px;
+  width: 100%;
+  display: flex;
+}
+.descInputField {
+  height: 70px;
+  width: 50%;
+  margin: 10px auto;
+  border: 2px solid #000000;
+  border-image: linear-gradient(
+      to left,
+      #831faa,
+      #ffee00,
+      #00e6f6,
+      #ffee00,
+      #831faa
+    )
+    1 10%;
+  display: flex;
+}
+.itemDescInputField {
+  font-family: "FutureTechno", sans-serif;
+  color: #ffee00;
+  background-color: rgba(36, 39, 123, 0.85);
+  border: none;
+  width: 100%;
+  text-shadow: -1px -1px 0px #485c5a, 1px 1px 4px #00e6f6;
+  box-shadow: 3px 3px 5px #00e6f6;
+  text-align: center;
+}
+.topInfo {
+  height: 140px;
+  width: 100%;
+  margin-bottom: 2%;
+}
+.headings {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin: 10px auto;
+}
+.idBox {
+  border: none;
+  background-color: rgba(36, 39, 123, 0.9);
+  border: 1px solid #ffee00;
+  box-shadow: 0 7px 15px #00e6f6;
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
+  color: #ffee00;
+  font-family: "FutureTechno", sans-serif;
+  text-shadow: -1px -1px 0px #485c5a, 1px 1px 4px #00e6f6;
+  text-align: center;
+}
+.addButton,
+.addButton:after {
+  width: 140px;
+  height: 60px;
+  line-height: 55px;
+  font-size: 20px;
+  font-family: "Revamped", sans-serif;
+  background: linear-gradient(
+    45deg,
+    transparent 15%,
+    rgba(36, 39, 123, 0.9) 10%
+  );
+  border-top: 1px solid #000000;
+  border-right: #000000 1px solid;
+  color: #ffee00;
+  letter-spacing: 3px;
+  margin: 5px;
+  box-shadow: 2px -2px 2px #00e6f6;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.addButton:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+
+  content: "consume";
+  display: block;
+  position: absolute;
+  top: -25%;
+  left: -20%;
+  right: 0;
+  bottom: 0;
+  width: 125%;
+  font-size: 18px;
+  color: #24277b;
+  background: linear-gradient(
+    45deg,
+    transparent 10%,
+    #00e6f6 3%,
+    #00e6f6 5%,
+    #0ce94e 5%
+  );
+  text-shadow: -3px -3px 0px #485c5a, 1px 1px 3px #00e6f6, 2px 2px 5px #ffee00;
+  clip-path: var(--slice-0);
+}
+.addButton:hover:after {
+  animation: 0.9s glitch;
+  animation-timing-function: steps(2, end);
+  border-top: 2px dotted #000000;
+  border-right: 2px dotted #000000;
+}
+.addButton:active {
+  background: linear-gradient(
+    45deg,
+    transparent 10%,
+    #00e6f6 3%,
+    #00e6f6 5%,
+    #0ce94e 5%
+  );
+  color: #24277b;
+}
+.editButton,
+.editButton:after {
+  width: 140px;
+  height: 60px;
+  line-height: 55px;
+  font-size: 20px;
+  font-family: "Revamped", sans-serif;
+  background: linear-gradient(0, transparent 0, rgba(36, 39, 123, 0.9) 0%);
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-left: 1px solid #000000;
+  color: #ffee00;
+  letter-spacing: 3px;
+  margin: 5px;
+  box-shadow: 0 -2px 2px #00e6f6;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.editButton:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+
+  content: "manipulate";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -10%;
+  right: 0;
+  bottom: 0;
+  width: 140%;
+  font-size: 15px;
+  color: #24277b;
+  background: linear-gradient(0, transparent 0, #00e6f6 0%);
+  text-shadow: -3px -3px 0px #485c5a, 1px 1px 3px #00e6f6, 2px 2px 5px #ffee00;
+  clip-path: var(--slice-0);
+}
+.editButton:hover:after {
+  animation: 0.9s glitch;
+  animation-timing-function: steps(2, end);
+  border-top: 2px dotted #000000;
+  border-right: 2px dotted #000000;
+  border-left: 2px dotted #000000;
+}
+.editButton:active {
+  background: linear-gradient(0, transparent 0, #00e6f6 0%);
+  color: #24277b;
+}
+.removeButton,
+.removeButton:after {
+  width: 140px;
+  height: 60px;
+  line-height: 55px;
+  font-size: 20px;
+  font-family: "Revamped", sans-serif;
+  background: linear-gradient(
+    315deg,
+    transparent 15%,
+    rgba(36, 39, 123, 0.85) 10%
+  );
+  border-top: 1px solid #000000;
+  border-left: #000000 1px solid;
+  color: #ffee00;
+  letter-spacing: 3px;
+  margin: 5px;
+  box-shadow: -2px -2px 2px #00e6f6;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.removeButton:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+
+  content: "kill";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #24277b;
+  background: linear-gradient(
+    315deg,
+    transparent 10%,
+    #f6005e 3%,
+    #f63100 5%,
+    #fc3052 5%
+  );
+  text-shadow: -3px -3px 0px #485c5a, 1px 1px 3px #00e6f6, 2px 2px 5px #ffee00;
+  clip-path: var(--slice-0);
+}
+.removeButton:hover:after {
+  animation: 0.8s glitch;
+  animation-timing-function: steps(2, end);
+  border-top: 2px dotted #000000;
+  border-left: 2px dotted #000000;
+}
+.removeButton:active {
+  background: linear-gradient(
+    315deg,
+    transparent 10%,
+    #f6005e 3%,
+    #f63100 5%,
+    #fc3052 5%
+  );
+  color: #24277b;
+}
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+@font-face {
+  font-family: "FutureTechno";
+  src: url(fonts/FutureTechnoItalic-X3EPj.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Revamped";
+  src: url(fonts/Revamped-X3q1a.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Hirosh";
+  src: url(fonts/Hirosh-X32d.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cyberway";
+  src: url(fonts/CyberwayRiders-lg97d.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+.listControlButtons {
+  display: flex;
+  width: 240px;
+  margin: 0 auto;
+}
+.saveButton,
+.saveButton::after {
+  width: 140px;
+  height: 60px;
+  line-height: 55px;
+  font-size: 20px;
+  font-family: "Revamped", sans-serif;
+  background: linear-gradient(
+    45deg,
+    transparent 10%,
+    #ffee00a9 10%,
+    #ffee00a9 15%,
+    transparent 15%,
+    transparent 20%,
+    #b757819f 20%,
+    #b757819f 80%,
+    transparent 80%,
+    transparent 85%,
+    #00e6f6 85%,
+    #00e6f6 88%,
+    transparent 88%
+  );
+  color: #ffee00;
+  letter-spacing: 3px;
+  margin: 5px;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.saveButton:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+
+  content: "save";
+  display: block;
+  position: absolute;
+  top: 0.5;
+  left: 0.5;
+  right: 0;
+  bottom: 0;
+  height: 110%;
+  width: 110%;
+  font-size: 18px;
+  background: linear-gradient(
+    45deg,
+    transparent 10%,
+    #31f600 3%,
+    #98f600 5%,
+    #e1fa00 5%
+  );
+  text-shadow: -3px -3px 0px #485c5a, 2px 2px 4px #00e6f6;
+  color: #24277b;
+  clip-path: var(--slice-0);
+}
+.saveButton:hover:after {
+  animation: 0.9s glitch infinite;
+  animation-timing-function: steps(2, end);
+  border-right: 3px dotted #000000;
+  border-left: 3px dotted #000000;
+}
+.saveButton::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  width: 70%;
+  border-left: #00ffff 1px solid;
+  border-top: #00ffff 1px solid;
+}
+.saveButton:active {
+  background: linear-gradient(
+    45deg,
+    transparent 10%,
+    #ffee00 10%,
+    #ffee00 15%,
+    transparent 15%,
+    transparent 20%,
+    #e72d2d9a 19%,
+    #e72d2d9a 81%,
+    transparent 81%,
+    transparent 85%,
+    #00e6f6 85%,
+    #00e6f6 88%,
+    transparent 88%
+  );
+}
+.loadButton,
+.loadButton::after {
+  width: 140px;
+  height: 60px;
+  line-height: 55px;
+  font-size: 20px;
+  font-family: "Revamped", sans-serif;
+  background: linear-gradient(
+    315deg,
+    transparent 10%,
+    #ffee00a9 10%,
+    #ffee00a9 15%,
+    transparent 15%,
+    transparent 20%,
+    #b757819f 20%,
+    #b757819f 80%,
+    transparent 80%,
+    transparent 85%,
+    #00e6f6 85%,
+    #00e6f6 88%,
+    transparent 88%
+  );
+  color: #ffee00;
+  letter-spacing: 3px;
+  margin: 5px;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.loadButton:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+
+  content: "load";
+  display: block;
+  position: absolute;
+  top: 0.5;
+  left: 0;
+  right: 1;
+  bottom: 0;
+  height: 110%;
+  width: 110%;
+  font-size: 18px;
+  background: linear-gradient(
+    315deg,
+    transparent 10%,
+    #31f600 3%,
+    #98f600 5%,
+    #e1fa00 5%
+  );
+  text-shadow: -3px -3px 0px #485c5a, 2px 2px 4px #00e6f6;
+  color: #24277b;
+  clip-path: var(--slice-0);
+}
+.loadButton:hover:after {
+  animation: 0.9s glitch infinite;
+  animation-timing-function: steps(2, end);
+  border-right: 3px dotted #000000;
+  border-left: 3px dotted #000000;
+}
+.loadButton::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -10%;
+  left: 35%;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  width: 70%;
+  border-right: #00ffff 1px solid;
+  border-top: #00ffff 1px solid;
+}
+.loadButton:active {
+  background: linear-gradient(
+    315deg,
+    transparent 10%,
+    #ffee00 10%,
+    #ffee00 15%,
+    transparent 15%,
+    transparent 20%,
+    #e72d2d9a 19%,
+    #e72d2d9a 81%,
+    transparent 81%,
+    transparent 85%,
+    #00e6f6 85%,
+    #00e6f6 88%,
+    transparent 88%
+  );
+}
+.headers {
+  margin-left: auto;
+  margin-right: 0;
+  width: 100%;
+  display: flex;
+  text-align: right;
+  border-bottom: 3px solid #00ffff;
+  background-color: #0e105886;
+  border-image: linear-gradient(
+      to left,
+      #e72d2d,
+      rgb(14, 199, 14),
+      #00ffaa,
+      rgb(14, 199, 14),
+      #e72d2d
+    )
+    1 10%;
+}
+.appearanceButton {
+  width: 50px;
+  height: 50px;
+}
+.removeAnim {
+  margin-top: 5px;
+  width: 40px;
+  height: 40px;
+  margin-right: 48%;
+  display: flex;
+}
+.loginButton {
+  width: 6%;
+  margin-left: 24%;
+  margin-right: 4px;
+  font-size: 22px;
+  font-family: "Revamped", sans-serif;
+  background: none;
+  color: #18d5e2be;
+  text-shadow: -1px -1px 2px #485c5a, 2px 2px 4px #ffee00;
+}
+.signupButton,
+.signoutButton {
+  width: 9%;
+  margin-left: 4px;
+  margin-right: 4px;
+  font-size: 22px;
+  font-family: "Revamped", sans-serif;
+  background: none;
+  color: #18d5e2be;
+  text-shadow: -1px -1px 2px #485c5a, 2px 2px 4px #ffee00;
+}
+.signoutButton {
+  display: none;
+}
+.loginButton:hover,
+.signupButton:hover,
+.signoutButton:hover {
+  color: #ffee00;
+  text-shadow: -3px -3px 0px #485c5a, 2px 2px 4px #00e6f6;
+}
+.loginButton:active,
+.signupButton:active,
+.signoutButton:active {
+  text-shadow: -1px -1px 3px #c72267be, 2px 2px 4px #e61b1bc0;
+}
+.modal-content {
+  background-color: #974f6dbe;
+  width: 100%;
+  border: #ffee00 2px solid;
+  border-radius: 8px;
+  font-family: "Revamped", sans-serif;
+  color: #24277b;
+  text-shadow: -2px -2px 4px #485c5a, 2px 2px 4px #18d5e2be, 0 2px 4px #ffee00;
+}
+.form-control {
+  font-family: "FutureTechno", sans-serif;
+  width: 70%;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.loginModalTitle {
+  font-family: "FutureTechno", sans-serif;
+  font-size: 28px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.emailInputField #emailInput,
+#passwordInput,
+#nameInput,
+#emailInput2,
+#passwordTemplate,
+#passwordConfirm {
+  background-color: #811515a8;
+  text-align: center;
+  color: #ffee00;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-shadow: -2px -2px 4px #485c5a, 2px 2px 4px #18d5e2be;
+  box-shadow: 3px 3px 5px #00e6f6c5;
+}
+.loginSubmit,
+.loginCancel {
+  border: none;
+  background: none !important;
+  font-family: "Revamped", sans-serif;
+  color: #18d5e2be;
+  text-shadow: -1px -1px 2px #485c5a, 2px 2px 4px #ffee00;
+}
+.loginSubmit:hover,
+.loginCancel:hover {
+  color: #ffee00;
+  text-shadow: -1px -1px 3px #c72267be, 2px 2px 4px #e61b1bc0;
+}
+.loginSubmit:active,
+.loginCancel:active {
+  text-shadow: -1px -1px 3px #ccc233c5, 2px 2px 4px #ffee00;
+  color: #e61b1b;
+}
+.signupModalTitle {
+  font-family: "FutureTechno", sans-serif;
+  font-size: 28px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.signupSubmit,
+.signupCancel {
+  border: none;
+  background: none !important;
+  font-family: "Revamped", sans-serif;
+  color: #18d5e2be;
+  text-shadow: -1px -1px 2px #485c5a, 2px 2px 4px #ffee00;
+}
+.signupSubmit:hover,
+.signupCancel:hover {
+  color: #ffee00;
+  text-shadow: -1px -1px 3px #c72267be, 2px 2px 4px #e61b1bc0;
+}
+.signupSubmit:active,
+.signupCancel:active {
+  text-shadow: -1px -1px 3px #ccc233c5, 2px 2px 4px #ffee00;
+  color: #e61b1b;
+}
+.modal-header {
+  background-color: #24277b;
+}
+.modal-body {
+  background-color: #363986;
+}
+.modal-footer {
+  background-color: #24277b;
+}
+.modal-title {
+  font-family: "Revamped", sans-serif;
+  color: #ffee00;
+  text-shadow: -2px -2px 5px #485c5a, 2px 2px 5px #18d5e2be,
+    -2px 2px 5px #c72267be;
+}
