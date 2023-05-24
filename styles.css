@@ -8,7 +8,7 @@ html {
   overflow: hidden;
 }
 body {
-  background-image: url("https://giffiles.alphacoders.com/211/211748.gif");
+  background-image: url("images/bgGif.gif");
   background-size: 100%;
   height: 100%;
   width: 100%;
@@ -29,7 +29,7 @@ body {
   height: auto;
   margin-left: 10%;
   margin-right: 10%;
-  font-family: "Cyberway", sans-serif;
+  font-family: "Hacked", sans-serif;
   font-size: 68px;
   color: #ffee00;
   text-shadow: 2px 2px 4px #000000;
@@ -38,10 +38,13 @@ body {
   text-shadow: -3px -3px 6px #485c5a, 3px 3px 6px #00e6f6;
 }
 .actionButtons {
+  margin-top: -10px;
+  margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px;
-  max-width: 500px;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 560px;
   text-align: center;
 }
 input {
@@ -89,7 +92,7 @@ input {
     )
     1 10%;
   text-align: center;
-  font-family: "Revamped", sans-serif;
+  font-family: "AlphaCentauri", sans-serif;
   font-size: 10px;
   color: #ffee00;
   text-shadow: -1px -1px 0px #485c5a, 1px 1px 4px #00e6f6;
@@ -142,7 +145,7 @@ li {
   margin-left: 30%;
   margin-right: 30%;
   margin-bottom: -10px;
-  font-family: "Revamped", sans-serif;
+  font-family: "Hacked", sans-serif;
   font-size: 18px;
   background-color: #24277b;
   color: #ffee00;
@@ -258,11 +261,12 @@ section {
 }
 .addButton,
 .addButton:after {
-  width: 140px;
-  height: 60px;
-  line-height: 55px;
+  width: 160px;
+  height: 50px;
+  line-height: 45px;
+  text-align: center;
   font-size: 20px;
-  font-family: "Revamped", sans-serif;
+  font-family: "AlphaCentauri", sans-serif;
   background: linear-gradient(
     45deg,
     transparent 15%,
@@ -326,11 +330,12 @@ section {
 }
 .editButton,
 .editButton:after {
-  width: 140px;
-  height: 60px;
-  line-height: 55px;
+  width: 160px;
+  height: 50px;
+  line-height: 45px;
+  text-align: center;
   font-size: 20px;
-  font-family: "Revamped", sans-serif;
+  font-family: "AlphaCentauri", sans-serif;
   background: linear-gradient(0, transparent 0, rgba(36, 39, 123, 0.9) 0%);
   border-top: 1px solid #000000;
   border-right: 1px solid #000000;
@@ -380,11 +385,13 @@ section {
 }
 .removeButton,
 .removeButton:after {
-  width: 140px;
-  height: 60px;
-  line-height: 55px;
+  width: 160px;
+  height: 50px;
+  line-height: 45px;
+  text-align: center;
   font-size: 20px;
-  font-family: "Revamped", sans-serif;
+  font-family: "AlphaCentauri", sans-serif;
+  text-align: center;
   background: linear-gradient(
     315deg,
     transparent 15%,
@@ -503,14 +510,26 @@ section {
   font-style: normal;
 }
 @font-face {
-  font-family: "Hirosh";
-  src: url(fonts/Hirosh-X32d.ttf);
+  font-family: "Cyberway";
+  src: url(fonts/CyberwayRiders-lg97d.ttf);
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Cyberway";
-  src: url(fonts/CyberwayRiders-lg97d.ttf);
+  font-family: "Hacked";
+  src: url(fonts/Hacked-KerX.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AlphaCentauri";
+  src: url(fonts/Alphacentauri-MVY4p.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "B81";
+  src: url(fonts/BraveEightyoneRegular-ZVGvm.ttf);
   font-weight: normal;
   font-style: normal;
 }
@@ -744,8 +763,8 @@ section {
   width: 6%;
   margin-left: 24%;
   margin-right: 4px;
-  font-size: 22px;
-  font-family: "Revamped", sans-serif;
+  font-size: 24px;
+  font-family: "AlphaCentauri", sans-serif;
   background: none;
   color: #18d5e2be;
   text-shadow: -1px -1px 2px #485c5a, 2px 2px 4px #ffee00;
@@ -755,8 +774,8 @@ section {
   width: 9%;
   margin-left: 4px;
   margin-right: 4px;
-  font-size: 22px;
-  font-family: "Revamped", sans-serif;
+  font-size: 24px;
+  font-family: "AlphaCentauri", sans-serif;
   background: none;
   color: #18d5e2be;
   text-shadow: -1px -1px 2px #485c5a, 2px 2px 4px #ffee00;
@@ -813,7 +832,8 @@ section {
 .loginCancel {
   border: none;
   background: none !important;
-  font-family: "Revamped", sans-serif;
+  font-family: "AlphaCentauri", sans-serif;
+  font-size: 20px;
   color: #18d5e2be;
   text-shadow: -1px -1px 2px #485c5a, 2px 2px 4px #ffee00;
 }

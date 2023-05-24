@@ -116,7 +116,7 @@ window.onload = function () {
     } else {
       img.src = "images/7.png";
       document.getElementById("body").style.backgroundImage =
-        "url('https://giffiles.alphacoders.com/211/211748.gif')";
+        "url('images/bgGif.gif')";
       document.getElementById("body").style.backgroundSize = "100%";
     }
   });
@@ -127,7 +127,7 @@ window.onload = function () {
     if (img.src.match("images/5.png")) {
       img.src = "images/6.png";
       document.getElementById("body").style.backgroundImage =
-        "url('https://i.redd.it/oflg65pzi7911.png')";
+        "url('images/bgAlt.png')";
       document.getElementById("body").style.backgroundSize = "100%";
       document.getElementById("inputList").style.backgroundColor = "#c700009a";
       document.querySelector(".headers").style.backgroundColor = "#c700009a";
@@ -179,7 +179,7 @@ window.onload = function () {
     } else {
       img.src = "images/5.png";
       document.getElementById("body").style.backgroundImage =
-        "url('https://giffiles.alphacoders.com/211/211748.gif')";
+        "url('images/bgGif.gif')";
       document.getElementById("body").style.backgroundSize = "100%";
       document.getElementById("inputList").style.backgroundColor = "#24277b9a";
       document.getElementById("headers").style.backgroundColor = "#0e105886";
