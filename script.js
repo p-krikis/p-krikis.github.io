@@ -1,6 +1,6 @@
-const loginInfoURL = "https://localhost:7075/api/RequestHandling/postLoginInfo"; //http://localhost:5198
+const loginInfoURL = "https://localhost:7239/api/RequestHandling/postLoginInfo"; //http://localhost:5198
 const signupInfoURL =
-  "https://localhost:7075/api/RequestHandling/postSignupInfo";
+  "https://localhost:7239/api/RequestHandling/postSignupInfo";
 
 //list input handling buttons
 // const addButton = document.querySelector(".addButton");
@@ -196,6 +196,9 @@ window.onload = function () {
         "url('images/bgGif.gif')";
       document.getElementById("body").style.backgroundSize = "100%";
       document.getElementById("inputList").style.backgroundColor = "#24277b9a";
+      //
+      // document.getElementById("inputList").classList.toggle("light");
+      //
       document.getElementById("headers").style.backgroundColor = "#0e105886";
       document.getElementById("input1").style.backgroundColor = "#24277bd9";
       document.getElementById("input1").style.color = "#ffee00";
@@ -304,25 +307,18 @@ async function login(email, password) {
       "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
     },
-  }).then((response) => {
-    if (response.status === 200) {
-      localStorage.setItem("userId", response.data.userId);
-      loginModal.style.display = "none";
-      document.querySelector(".loginButton").style.display = "none";
-      document.querySelector(".signupButton").style.display = "none";
-      document.querySelector(".signoutButton").style.display = "block";
-      //document.querySelector(".signoutButton").innerHTML = "Sign Out";
-      // document
-      //   .querySelector(".signoutButton")
-      //   .addEventListener("click", function () {
-      //     localStorage.clear();
-      //     document.querySelector(".loginButton").style.display = "block";
-      //     document.querySelector(".signupButton").style.display = "block";
-      //     document.querySelector(".signoutButton").style.display = "none";
-      //     document.querySelector(".signoutButton").innerHTML = "";
-      //   });
-    }
-  });
+  })
+    .then((response) => {
+      if (response.status === 200) {
+        alert("Logged in successfully.");
+      } else {
+        alert("Incorrect email or password.");
+      }
+    })
+    .catch((error) => {
+      alert("Incorrect email or password.");
+      console.log(error);
+    });
 }
 async function signup(username, email, password, id) {
   await axios({
@@ -340,7 +336,6 @@ async function signup(username, email, password, id) {
     },
   }).then((response) => {
     if (response.status === 200) {
-      loginModal.style.display = "none";
       alert("Account created successfully. Please login to continue.");
     }
   });
