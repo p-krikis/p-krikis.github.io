@@ -32,7 +32,6 @@ body {
   font-family: "Hacked", sans-serif;
   font-size: 76px;
   color: #ffee00;
-  text-shadow: 2px 2px 4px #000000;
   display: block;
   text-align: center;
   text-shadow: -3px -3px 6px #485c5a, 3px 3px 6px #00e6f6;
@@ -899,4 +898,92 @@ audio::-webkit-media-controls-time-remaining-display {
 audio::-webkit-media-controls-play-button {
   background-color: #3a3eaade;
   border-radius: 50%;
+}
+.sidebar {
+  background-color: #0e1058ab;
+  padding-top: 2px;
+  height: 877px;
+  width: 190px;
+  display: block;
+  margin-left: -24%;
+  margin-top: -56.3%;
+  border-right: #000000 4px solid;
+  border-image: linear-gradient(
+      to bottom,
+      rgb(125, 184, 17),
+      rgb(125, 184, 17),
+      #00e6f6,
+      #00e6f6,
+      #00e6f6,
+      #ffee00,
+      #e0a911
+    )
+    1 10%;
+}
+.funcButtons {
+  width: 180px;
+  height: 50px;
+  margin-bottom: 10px;
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #ffee00;
+  transition: 0.4s;
+  background: none;
+  margin-left: 3px;
+  margin-right: 3px;
+  font-family: "AlphaCentauri", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: -3px -3px 6px #485c5a, 3px 3px 6px #00e6f6;
+}
+.funcButtons:hover {
+  color: #24277b;
+  background-size: 50%;
+  background: #ffee00;
+}
+.funcButtons:hover::before,
+.funcButtons:hover::after {
+  position: absolute;
+  top: 1px;
+  content: "";
+  width: 48px;
+  height: 95%;
+  display: inline-block;
+}
+.funcButtons:before,
+.funcButtons:after {
+  position: absolute;
+  top: 0;
+  content: "";
+  width: 24px;
+  height: 100%;
+  display: inline-block;
+}
+.funcButtons:before {
+  border-left: solid 2px #ffee00;
+  border-top: solid 2px #ffee00;
+  border-bottom: solid 2px #ffee00;
+  left: 0;
+}
+.funcButtons:after {
+  content: "";
+  border-top: solid 2px #ffee00;
+  border-right: solid 2px #ffee00;
+  border-bottom: solid 2px #ffee00;
+  right: 0;
+}
+.funcButtons:hover::before {
+  border-left: solid 2px #24277b;
+  border-top: solid 2px #24277b;
+  border-bottom: solid 2px #24277b;
+  left: 0;
+}
+.funcButtons:hover::after {
+  content: "";
+  border-top: solid 2px #24277b;
+  border-right: solid 2px #24277b;
+  border-bottom: solid 2px #24277b;
+  right: 0;
 }
