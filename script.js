@@ -22,9 +22,8 @@ const signupInfoURL =
 // //modals
 // const loginModal = document.querySelector(".loginModal");
 // const signupModal = document.querySelector(".signupModal");
+
 var isConnected = false;
-const saveButton = document.querySelector(".saveButton");
-const loadButton = document.querySelector(".loadButton");
 
 window.onload = function () {
   const addButton = document.querySelector(".addButton");
@@ -43,6 +42,9 @@ window.onload = function () {
   const signupSubmit = document.querySelector(".signupSubmit");
   const toggleAnim = document.querySelector(".removeAnim");
   const toggleMusic = document.querySelector(".toggleMusic");
+
+  const saveButton = document.querySelector(".saveButton");
+  const loadButton = document.querySelector(".loadButton");
 
   logoutButton.style.display = "none";
 
@@ -314,6 +316,11 @@ window.onload = function () {
   logoutButton.addEventListener("click", function () {
     signOut();
   });
+  saveButton.addEventListener("click", function () {
+    //const list = document.getElementById("itemList");
+    //console.log(list.innerHTML);
+    saveList();
+  });
 };
 function clearForm() {
   document.getElementById("emailInput").value = "";
@@ -380,17 +387,31 @@ function signOut() {
 //   let modal = document.querySelector(".modal fade");
 //   $(modal).modal("hide");
 // }
+
 async function saveList() {
-  const list = [];
+  const itemArray = [];
+  const descArray = [];
   const listItems = document.querySelectorAll(".itemList");
+
   listItems.forEach((item) => {
-    list.push(item.innerText);
+    const itemFullList = item.innerText.split("\n\n"); // split each item and its description
+    listItems.forEach((item) => {
+      for (let i = 0; i < itemFullList.length; i++) {
+        if (i % 2 === 0) {
+          itemArray.push(itemFullList[i]);
+        } else {
+          descArray.push(itemFullList[i]);
+        }
+      }
+    });
   });
+
   await axios({
     method: "post",
     url: saveListURL,
     data: {
-      list: list,
+      itemNameList: itemArray,
+      itemDescList: descArray,
       userId: localStorage.getItem("userId"),
     },
     headers: {
@@ -407,3 +428,32 @@ async function saveList() {
       console.log(error);
     });
 }
+
+// async function saveList() {
+//   const list = [];
+//   const listItems = document.querySelectorAll(".itemList");
+//   listItems.forEach((item) => {
+//     list.push(item.innerText);
+//   });
+//   console.log(list);
+//   await axios({
+//     method: "post",
+//     url: saveListURL,
+//     data: {
+//       list: list,
+//       userId: localStorage.getItem("userId"),
+//     },
+//     headers: {
+//       "Access-Control-Allow-Origin": "*",
+//       "Content-Type": "application/json",
+//     },
+//   })
+//     .then((response) => {
+//       if (response.status === 200) {
+//         alert("List saved successfully.");
+//       }
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// }
