@@ -22,6 +22,9 @@ const signupInfoURL =
 // //modals
 // const loginModal = document.querySelector(".loginModal");
 // const signupModal = document.querySelector(".signupModal");
+var isConnected = false;
+const saveButton = document.querySelector(".saveButton");
+const loadButton = document.querySelector(".loadButton");
 
 window.onload = function () {
   const addButton = document.querySelector(".addButton");
@@ -312,11 +315,10 @@ async function login(email, password) {
       if (response.status === 200) {
         alert("Logged in successfully.");
       } else {
-        alert("Incorrect email or password.");
+        document.querySelector(".failed").style.visibility = "visible";
       }
     })
     .catch((error) => {
-      alert("Incorrect email or password.");
       console.log(error);
     });
 }
@@ -334,9 +336,22 @@ async function signup(username, email, password, id) {
       "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
     },
-  }).then((response) => {
-    if (response.status === 200) {
-      alert("Account created successfully. Please login to continue.");
-    }
-  });
+  })
+    .then((response) => {
+      if (response.status === 200) {
+        alert("Account created successfully. Please login to continue.");
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+function checkConnection() {
+  if (localStorage.getItem("userId") === null) {
+    saveButton.disabled = true;
+    loadButton.disabled = true;
+  } else {
+    saveButton.disabled = false;
+    loadButton.disabled = false;
+  }
 }

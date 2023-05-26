@@ -946,7 +946,7 @@ audio::-webkit-media-controls-play-button {
 .funcButtons:hover::before,
 .funcButtons:hover::after {
   position: absolute;
-  top: 1px;
+  top: 2%;
   content: "";
   width: 48px;
   height: 95%;
@@ -978,12 +978,47 @@ audio::-webkit-media-controls-play-button {
   border-left: solid 2px #24277b;
   border-top: solid 2px #24277b;
   border-bottom: solid 2px #24277b;
-  left: 0;
+  left: 1%;
 }
 .funcButtons:hover::after {
   content: "";
   border-top: solid 2px #24277b;
   border-right: solid 2px #24277b;
   border-bottom: solid 2px #24277b;
-  right: 0;
+  right: 1%;
+}
+.funcButtons:active {
+  box-shadow: -3px 3px 3px #00e6f6c5;
+  background-color: #24277b;
+  color: #ffee00;
+}
+.funcButtons:active::before {
+  border-left: solid 2px #ffee00;
+  border-top: solid 2px #ffee00;
+  border-bottom: solid 2px #ffee00;
+  left: 3%;
+}
+.funcButtons:active::after {
+  content: "";
+  border-top: solid 2px #ffee00;
+  border-right: solid 2px #ffee00;
+  border-bottom: solid 2px #ffee00;
+  right: 3%;
+}
+.funcButtons:active::before,
+.funcButtons:active::after {
+  position: absolute;
+  top: 5%;
+  content: "";
+  width: 48px;
+  height: 90%;
+  display: inline-block;
+}
+.failed {
+  color: #ffee00;
+  font-family: "B81", sans-serif;
+  width: 50%;
+  font-size: 14px;
+  text-shadow: -3px -3px 6px #485c5a, 3px 3px 6px #f60000;
+  visibility: hidden;
 }
