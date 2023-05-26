@@ -76,8 +76,8 @@ input {
     )
     1 10%;
   text-align: center;
-  font-family: "AlphaCentauri", sans-serif;
-  font-size: 10px;
+  font-family: "B81", sans-serif;
+  font-size: 16px;
   color: #ffee00;
   text-shadow: -1px -1px 0px #485c5a, 1px 1px 4px #00e6f6;
   width: 100%;
@@ -87,6 +87,13 @@ input {
   bottom: 0;
   left: 0;
   text-align: center;
+}
+.gitLink {
+  color: #ff0055;
+}
+.gitLink:hover {
+  color: #ffee00;
+  text-shadow: -1px -1px 0px #485c5a, 1px 1px 4px #00e6f6;
 }
 .inputList {
   background: rgba(36, 39, 123, 0.85);
@@ -933,7 +940,7 @@ audio::-webkit-media-controls-play-button {
   background: none;
   margin-left: 3px;
   margin-right: 3px;
-  font-family: "AlphaCentauri", sans-serif;
+  font-family: "FutureTechno", sans-serif;
   font-size: 20px;
   text-align: center;
   text-shadow: -3px -3px 6px #485c5a, 3px 3px 6px #00e6f6;
