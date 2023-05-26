@@ -1018,7 +1018,7 @@ audio::-webkit-media-controls-play-button {
   color: #ffee00;
   font-family: "B81", sans-serif;
   width: 50%;
-  font-size: 14px;
+  font-size: 12px;
   text-shadow: -3px -3px 6px #485c5a, 3px 3px 6px #f60000;
-  visibility: hidden;
+  display: none;
 }

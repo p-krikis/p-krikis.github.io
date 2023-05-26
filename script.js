@@ -289,8 +289,30 @@ window.onload = function () {
       alert("Please fill in all fields.");
       return;
     }
-    login(email, password);
+    //login(email, password);
+    result = login(email, password);
+    if (result !== null) {
+      logoutButton.style.display = "block";
+      loginButton.style.display = "none";
+      signupButton.style.display = "none";
+      localStorage.setItem("userId", result);
+      //hideModal();
+      console.log(localStorage);
+      clearForm();
+    } else {
+      document.querySelector(".failed").style.display = "block";
+    }
+    logoutButton.style.display = "block";
+    //let md = document.getElementById("loginModal");
+    //md.setAttribute("class", "modal fade hide");
+    //md.setAttribute("display", "none");
+    //loginSubmit.setAttribute("data-bs-dismiss", "modal");
+    //console.log(md.innerHTML);
+    //hideModal();
     clearForm();
+  });
+  logoutButton.addEventListener("click", function () {
+    signOut();
   });
 };
 function clearForm() {
@@ -314,12 +336,16 @@ async function login(email, password) {
     .then((response) => {
       if (response.status === 200) {
         alert("Logged in successfully.");
+        console.log(response.data);
+        //return response.data;
       } else {
-        document.querySelector(".failed").style.visibility = "visible";
+        //document.querySelector(".failed").style.visibility = "visible";
+        return null;
       }
     })
     .catch((error) => {
       console.log(error);
+      return null;
     });
 }
 async function signup(username, email, password, id) {
@@ -346,12 +372,38 @@ async function signup(username, email, password, id) {
       console.log(error);
     });
 }
-function checkConnection() {
-  if (localStorage.getItem("userId") === null) {
-    saveButton.disabled = true;
-    loadButton.disabled = true;
-  } else {
-    saveButton.disabled = false;
-    loadButton.disabled = false;
-  }
+function signOut() {
+  localStorage.clear();
+  window.location.reload();
+}
+// function hideModal() {
+//   let modal = document.querySelector(".modal fade");
+//   $(modal).modal("hide");
+// }
+async function saveList() {
+  const list = [];
+  const listItems = document.querySelectorAll(".itemList");
+  listItems.forEach((item) => {
+    list.push(item.innerText);
+  });
+  await axios({
+    method: "post",
+    url: saveListURL,
+    data: {
+      list: list,
+      userId: localStorage.getItem("userId"),
+    },
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.status === 200) {
+        alert("List saved successfully.");
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
