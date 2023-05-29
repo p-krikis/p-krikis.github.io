@@ -1,6 +1,11 @@
 const loginInfoURL = "https://localhost:7239/api/RequestHandling/postLoginInfo"; //http://localhost:5198
 const signupInfoURL =
   "https://localhost:7239/api/RequestHandling/postSignupInfo";
+const saveListURL = "https://localhost:7239/api/RequestHandling/saveListData";
+const loadAllLists = "https://localhost:7239/api/RequestHandling/getAllLists"; //requires userid
+const loadSingleList =
+  "https://localhost:7239/api/RequestHandling/loadSpecificList"; //requires userid + listname
+const deleteList = "https://localhost:7239/api/RequestHand/ling/deleteList"; //requires userid + listname
 
 //list input handling buttons
 // const addButton = document.querySelector(".addButton");
@@ -38,13 +43,14 @@ window.onload = function () {
   const loginButton = document.querySelector(".loginButton");
   const signupButton = document.querySelector(".signupButton");
   const logoutButton = document.querySelector(".signoutButton");
-  const loginSubmit = document.querySelector(".loginSubmit");
-  const signupSubmit = document.querySelector(".signupSubmit");
+  const loginSubmit = document.getElementById("loginSubmit");
+  const signupSubmit = document.getElementById("signupSubmit");
   const toggleAnim = document.querySelector(".removeAnim");
   const toggleMusic = document.querySelector(".toggleMusic");
 
-  const saveButton = document.querySelector(".saveButton");
-  const loadButton = document.querySelector(".loadButton");
+  const saveListSubmit = document.getElementById("saveListNameSubmit");
+  //const saveButton = document.querySelector(".saveButton");
+  //const loadButton = document.querySelector(".loadButton");
 
   logoutButton.style.display = "none";
 
@@ -291,35 +297,26 @@ window.onload = function () {
       alert("Please fill in all fields.");
       return;
     }
-    //login(email, password);
-    result = login(email, password);
-    if (result !== null) {
+    login(email, password).then((result) => {
+      if (result !== null) {
+        logoutButton.style.display = "block";
+        loginButton.style.display = "none";
+        signupButton.style.display = "none";
+        localStorage.setItem("userId", result);
+        clearForm();
+      } else {
+        document.querySelector(".failed").style.display = "block";
+      }
       logoutButton.style.display = "block";
-      loginButton.style.display = "none";
-      signupButton.style.display = "none";
-      localStorage.setItem("userId", result);
-      //hideModal();
-      console.log(localStorage);
       clearForm();
-    } else {
-      document.querySelector(".failed").style.display = "block";
-    }
-    logoutButton.style.display = "block";
-    //let md = document.getElementById("loginModal");
-    //md.setAttribute("class", "modal fade hide");
-    //md.setAttribute("display", "none");
-    //loginSubmit.setAttribute("data-bs-dismiss", "modal");
-    //console.log(md.innerHTML);
-    //hideModal();
-    clearForm();
+    });
   });
   logoutButton.addEventListener("click", function () {
     signOut();
   });
-  saveButton.addEventListener("click", function () {
-    //const list = document.getElementById("itemList");
-    //console.log(list.innerHTML);
+  saveListSubmit.addEventListener("click", function () {
     saveList();
+    clearForm();
   });
 };
 function clearForm() {
@@ -329,31 +326,29 @@ function clearForm() {
   document.getElementById("emailInput2").value = "";
   document.getElementById("passwordTemplate").value = "";
   document.getElementById("passwordConfirm").value = "";
+  document.getElementById("listNameInput").value = "";
 }
 async function login(email, password) {
-  await axios({
-    method: "post",
-    url: loginInfoURL,
-    data: { email: email, password: password },
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => {
-      if (response.status === 200) {
-        alert("Logged in successfully.");
-        console.log(response.data);
-        //return response.data;
-      } else {
-        //document.querySelector(".failed").style.visibility = "visible";
-        return null;
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-      return null;
+  try {
+    const response = await axios({
+      method: "post",
+      url: loginInfoURL,
+      data: { email: email, password: password },
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
     });
+    if (response.status === 200) {
+      alert("Logged in successfully.");
+      return response.data;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
 }
 async function signup(username, email, password, id) {
   await axios({
@@ -389,8 +384,8 @@ function signOut() {
 // }
 
 async function saveList() {
-  const itemArray = [];
-  const descArray = [];
+  const nameData = [];
+  const descData = [];
   const listItems = document.querySelectorAll(".itemList");
 
   listItems.forEach((item) => {
@@ -398,20 +393,20 @@ async function saveList() {
     listItems.forEach((item) => {
       for (let i = 0; i < itemFullList.length; i++) {
         if (i % 2 === 0) {
-          itemArray.push(itemFullList[i]);
+          nameData.push(itemFullList[i]);
         } else {
-          descArray.push(itemFullList[i]);
+          descData.push(itemFullList[i]);
         }
       }
     });
   });
-
   await axios({
     method: "post",
     url: saveListURL,
     data: {
-      itemNameList: itemArray,
-      itemDescList: descArray,
+      listName: document.getElementById("listNameInput").value,
+      nameData: nameData,
+      descData: descData,
       userId: localStorage.getItem("userId"),
     },
     headers: {

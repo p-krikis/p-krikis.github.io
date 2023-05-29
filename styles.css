@@ -824,8 +824,8 @@ section {
   text-shadow: -2px -2px 4px #485c5a, 2px 2px 4px #18d5e2be;
   box-shadow: 3px 3px 5px #00e6f6c5;
 }
-.loginSubmit,
-.loginCancel {
+.modalSubmit,
+.modalCancel {
   border: none;
   background: none !important;
   font-family: "AlphaCentauri", sans-serif;
@@ -833,13 +833,13 @@ section {
   color: #18d5e2be;
   text-shadow: -1px -1px 2px #485c5a, 2px 2px 4px #ffee00;
 }
-.loginSubmit:hover,
-.loginCancel:hover {
+.modalSubmit:hover,
+.modalCancel:hover {
   color: #ffee00;
   text-shadow: -1px -1px 3px #c72267be, 2px 2px 4px #e61b1bc0;
 }
-.loginSubmit:active,
-.loginCancel:active {
+.modalSubmit:active,
+.modalCancel:active {
   text-shadow: -1px -1px 3px #ccc233c5, 2px 2px 4px #ffee00;
   color: #e61b1b;
 }
@@ -848,24 +848,6 @@ section {
   font-size: 28px;
   margin-top: 1%;
   margin-bottom: 1%;
-}
-.signupSubmit,
-.signupCancel {
-  border: none;
-  background: none !important;
-  font-family: "Revamped", sans-serif;
-  color: #18d5e2be;
-  text-shadow: -1px -1px 2px #485c5a, 2px 2px 4px #ffee00;
-}
-.signupSubmit:hover,
-.signupCancel:hover {
-  color: #ffee00;
-  text-shadow: -1px -1px 3px #c72267be, 2px 2px 4px #e61b1bc0;
-}
-.signupSubmit:active,
-.signupCancel:active {
-  text-shadow: -1px -1px 3px #ccc233c5, 2px 2px 4px #ffee00;
-  color: #e61b1b;
 }
 .modal-header {
   background-color: #24277b;
@@ -1028,4 +1010,12 @@ audio::-webkit-media-controls-play-button {
   font-size: 12px;
   text-shadow: -3px -3px 6px #485c5a, 3px 3px 6px #f60000;
   display: none;
+}
+#listNameInput {
+  background-color: #811515a8;
+  text-align: center;
+  color: #ffee00;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-shadow: -2px -2px 4px #485c5a, 2px 2px 4px #18d5e2be;
+  box-shadow: 3px 3px 5px #00e6f6c5;
 }

@@ -69,8 +69,28 @@
                 </div>
                 <div class="modal-footer" id="loginModalFooter">
                   <p class="failed">Incorrect email and/or password!</p>
-                  <button type="button" class="loginCancel" data-bs-dismiss="modal" onclick="clearForm()">Cancel</button>
-                  <button type="button" class="loginSubmit">Submit</button>
+                  <button type="button" id="loginCancel" class="modalCancel" data-bs-dismiss="modal" onclick="clearForm()">Cancel</button>
+                  <button type="button" id="loginSubmit" class="modalSubmit">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div><div class="modal fade" id="saveListModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header" id="saveListModalHeader">
+                  <h1 class="modal-title" id="saveListModalTitle">List name</h1>
+                </div>
+                <div class="modal-body" id="saveListModalBody">
+                  <form id="saveListForm">
+                    <div class="saveListInputField">
+                        <input type="text" id="listNameInput" class="form-control" placeholder="List name" maxlength="48"/>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer" id="saveListModalFooter">
+                  <p class="failed">Incorrect email and/or password!</p>
+                  <button type="button" id="saveListNameCancel" class="modalCancel" data-bs-dismiss="modal" onclick="clearForm()">Cancel</button>
+                  <button type="button" id="saveListNameSubmit" class="modalSubmit" data-bs-dismiss="modal">Submit</button>
                 </div>
               </div>
             </div>
@@ -98,8 +118,8 @@
                 </form>
                 </div>
                 <div class="modal-footer" id="signupModalFooter">
-                  <button type="button" class="signupCancel" data-bs-dismiss="modal" onclick="clearForm()">Cancel</button>
-                  <button type="button" class="signupSubmit">Submit</button>
+                  <button type="button" id="signupCancel" class="modalCancel" data-bs-dismiss="modal" onclick="clearForm()">Cancel</button>
+                  <button type="button" id="signupSubmit" class="modalSubmit" data-bs-dismiss="modal">Submit</button>
                 </div>
               </div>
             </div>
@@ -113,7 +133,7 @@
             </ol>
           </div>
         <div class="listControlButtons">
-          <button type="button" class="saveButton" id="saveButton">SAVE</button>
+          <button type="button" class="saveButton" id="saveButton" data-bs-toggle="modal" data-bs-target="#saveListModal">SAVE</button>
           <button type="button" class="loadButton" id="loadButton">LOAD</button>
         </div>
       </main>
