@@ -1019,3 +1019,10 @@ audio::-webkit-media-controls-play-button {
   text-shadow: -2px -2px 4px #485c5a, 2px 2px 4px #18d5e2be;
   box-shadow: 3px 3px 5px #00e6f6c5;
 }
+.loadSpecificList {
+  width: 45%;
+  height: 40px;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}

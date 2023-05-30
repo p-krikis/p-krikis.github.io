@@ -2,31 +2,11 @@ const loginInfoURL = "https://localhost:7239/api/RequestHandling/postLoginInfo";
 const signupInfoURL =
   "https://localhost:7239/api/RequestHandling/postSignupInfo";
 const saveListURL = "https://localhost:7239/api/RequestHandling/saveListData";
-const loadAllLists = "https://localhost:7239/api/RequestHandling/getAllLists"; //requires userid
+const loadAllListsURL =
+  "https://localhost:7239/api/RequestHandling/getAllLists"; //requires userid
 const loadSingleList =
   "https://localhost:7239/api/RequestHandling/loadSpecificList"; //requires userid + listname
 const deleteList = "https://localhost:7239/api/RequestHand/ling/deleteList"; //requires userid + listname
-
-//list input handling buttons
-// const addButton = document.querySelector(".addButton");
-// const removeButton = document.querySelector(".removeButton");
-// const editButton = document.querySelector(".editButton");
-// const itemIDselector = document.querySelector(".idBox");
-
-// let numberOfItems = document.querySelectorAll(".itemList").length;
-// let itemListFull = document.querySelectorAll(".itemList");
-
-// //header buttons
-// const appearanceMode = document.querySelector(".appearanceButton");
-// const loginButton = document.querySelector(".loginButton");
-// const signupButton = document.querySelector(".signupButton");
-// const logoutButton = document.querySelector(".signoutButton");
-// const loginSubmit = document.querySelector(".loginSubmit");
-// const signupSubmit = document.querySelector(".signupSubmit");
-
-// //modals
-// const loginModal = document.querySelector(".loginModal");
-// const signupModal = document.querySelector(".signupModal");
 
 var isConnected = false;
 
@@ -47,12 +27,15 @@ window.onload = function () {
   const signupSubmit = document.getElementById("signupSubmit");
   const toggleAnim = document.querySelector(".removeAnim");
   const toggleMusic = document.querySelector(".toggleMusic");
+  const loadLists = document.querySelector(".loadLists");
 
   const saveListSubmit = document.getElementById("saveListNameSubmit");
   //const saveButton = document.querySelector(".saveButton");
-  //const loadButton = document.querySelector(".loadButton");
+  const loadButton = document.getElementById("loadButton");
 
   logoutButton.style.display = "none";
+
+  console.log(loadLists.innerHTML);
 
   addButton.addEventListener("click", function () {
     const itemName = document.getElementById("input1").value;
@@ -144,6 +127,13 @@ window.onload = function () {
         "url('images/bgGif.gif')";
       document.getElementById("body").style.backgroundSize = "100%";
     }
+  });
+
+  loadButton.addEventListener("click", function () {
+    userId = localStorage.getItem("userId");
+    loadAllLists(userId).then((result) => {
+      console.log(result);
+    });
   });
 
   //dark/light mode
@@ -374,6 +364,41 @@ async function signup(username, email, password, id) {
       console.log(error);
     });
 }
+async function loadAllLists(userId) {
+  await axios({
+    method: "get",
+    url: loadAllListsURL,
+    data: {
+      userId: userId,
+    },
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.statusCode === 200) {
+        var returnedData = JsonStringify(response.data);
+        return returnedData;
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  // const response = await axios({
+  //   method: "get",
+  //   url: loadAllListsURL,
+  //   data: {
+  //     userId: userId,
+  //   },
+  //   headers: {
+  //     "Access-Control-Allow-Origin": "*",
+  //     "Content-Type": "application/json",
+  //   },
+  // });
+  // var returnedData = JsonStringify(response);
+  // return returnedData;
+}
 function signOut() {
   localStorage.clear();
   window.location.reload();
@@ -423,7 +448,9 @@ async function saveList() {
       console.log(error);
     });
 }
-
+function redirectToMaps() {
+  window.location.href = "map.html";
+}
 // async function saveList() {
 //   const list = [];
 //   const listItems = document.querySelectorAll(".itemList");
