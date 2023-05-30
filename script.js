@@ -341,15 +341,16 @@ async function login(email, password) {
   }
 }
 async function signup(username, email, password, id) {
+  const data = {
+    username: username,
+    email: email,
+    password: password,
+    userId: id,
+  };
   await axios({
     method: "post",
     url: signupInfoURL,
-    data: {
-      username: username,
-      email: email,
-      password: password,
-      userId: id,
-    },
+    data: JSON.stringify(data),
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
@@ -425,15 +426,16 @@ async function saveList() {
       }
     });
   });
+  const data = {
+    listName: document.getElementById("listNameInput").value,
+    nameData: nameData,
+    descData: descData,
+    userId: localStorage.getItem("userId"),
+  };
   await axios({
     method: "post",
     url: saveListURL,
-    data: {
-      listName: document.getElementById("listNameInput").value,
-      nameData: nameData,
-      descData: descData,
-      userId: localStorage.getItem("userId"),
-    },
+    data: JSON.stringify(data),
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",

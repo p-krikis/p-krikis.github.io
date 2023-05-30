@@ -1,0 +1,60 @@
+.home {
+  width: 10%;
+  height: 50px;
+  background: none;
+  border: none;
+  font-family: "Hacked", sans-serif;
+  font-size: 50px;
+  color: #ffee00;
+  text-shadow: -3px -3px 0px #485c5a, 2px 2px 4px #00e6f6;
+}
+.home:hover {
+  color: #00e6f6;
+  text-shadow: -3px -3px 0px #485c5a, 2px 2px 4px #ffee00;
+}
+body {
+  background-color: #474747;
+}
+#map {
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  top: 10%;
+  left: 25%;
+}
+@font-face {
+  font-family: "FutureTechno";
+  src: url(fonts/FutureTechnoItalic-X3EPj.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Revamped";
+  src: url(fonts/Revamped-X3q1a.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cyberway";
+  src: url(fonts/CyberwayRiders-lg97d.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Hacked";
+  src: url(fonts/Hacked-KerX.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AlphaCentauri";
+  src: url(fonts/Alphacentauri-MVY4p.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "B81";
+  src: url(fonts/BraveEightyoneRegular-ZVGvm.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
