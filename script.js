@@ -30,7 +30,6 @@ window.onload = function () {
   const loadLists = document.querySelector(".loadLists");
 
   const saveListSubmit = document.getElementById("saveListNameSubmit");
-  //const saveButton = document.querySelector(".saveButton");
   const loadButton = document.getElementById("loadButton");
 
   logoutButton.style.display = "none";
@@ -40,6 +39,7 @@ window.onload = function () {
     logoutButton.style.display = "inline";
   }
   console.log(loadLists.innerHTML);
+  //<button type="button" class="loadSpecificList" data-bs-dismiss="modal">List 2</button>
 
   addButton.addEventListener("click", function () {
     const itemName = document.getElementById("input1").value;
@@ -133,10 +133,20 @@ window.onload = function () {
     }
   });
 
-  loadButton.addEventListener("click", function () {
+  //clearList()
+
+  loadButton.addEventListener("click", async function () {
     userId = localStorage.getItem("userId");
-    console.log(userId);
-    loadAllLists(userId);
+    const res = await loadAllLists(userId);
+    let length = res.length;
+    for (let i = 0; i < length; i++) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "loadSpecificList";
+      btn.setAttribute("data-bs-dismiss", "modal");
+      btn.innerText = `${res[i].listName}, ${res[i].timeCreated}`;
+      loadLists.appendChild(btn);
+    }
   });
 
   //dark/light mode
@@ -370,7 +380,7 @@ async function signup(username, email, password, id) {
     });
 }
 async function loadAllLists(userId) {
-  await axios({
+  let resp = await axios({
     method: "post",
     url: loadAllListsURL,
     data: {
@@ -382,14 +392,17 @@ async function loadAllLists(userId) {
     },
   })
     .then((response) => {
-      if (response.statusCode === 200) {
-        console.log(response.data);
+      if (response) {
         return response.data;
+      } else {
+        console.log("NO RESPONSE");
       }
     })
     .catch((error) => {
       console.log(error);
     });
+
+  return resp;
 }
 function signOut() {
   localStorage.clear();
@@ -460,4 +473,8 @@ function enableButtons() {
   saveButton.className = "saveButton";
   loadButton.disabled = false;
   loadButton.className = "loadButton";
+}
+function clearList() {
+  const loadLists = document.querySelector(".loadLists");
+  loadLists.innerHTML = "";
 }
