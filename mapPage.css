@@ -21,6 +21,7 @@ body {
   position: absolute;
   top: 10%;
   left: 25%;
+  background-color: #ffee00;
 }
 @font-face {
   font-family: "FutureTechno";
