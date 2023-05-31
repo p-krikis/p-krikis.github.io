@@ -34,7 +34,11 @@ window.onload = function () {
   const loadButton = document.getElementById("loadButton");
 
   logoutButton.style.display = "none";
-
+  if (localStorage.getItem("user") != null) {
+    loginButton.style.display = "none";
+    signupButton.style.display = "none";
+    logoutButton.style.display = "inline";
+  }
   console.log(loadLists.innerHTML);
 
   addButton.addEventListener("click", function () {
@@ -131,9 +135,8 @@ window.onload = function () {
 
   loadButton.addEventListener("click", function () {
     userId = localStorage.getItem("userId");
-    loadAllLists(userId).then((result) => {
-      console.log(result);
-    });
+    console.log(userId);
+    loadAllLists(userId);
   });
 
   //dark/light mode
@@ -293,6 +296,7 @@ window.onload = function () {
         loginButton.style.display = "none";
         signupButton.style.display = "none";
         localStorage.setItem("userId", result);
+        enableButtons();
         clearForm();
       } else {
         document.querySelector(".failed").style.display = "block";
@@ -367,7 +371,7 @@ async function signup(username, email, password, id) {
 }
 async function loadAllLists(userId) {
   await axios({
-    method: "get",
+    method: "post",
     url: loadAllListsURL,
     data: {
       userId: userId,
@@ -379,35 +383,18 @@ async function loadAllLists(userId) {
   })
     .then((response) => {
       if (response.statusCode === 200) {
-        var returnedData = JsonStringify(response.data);
-        return returnedData;
+        console.log(response.data);
+        return response.data;
       }
     })
     .catch((error) => {
       console.log(error);
     });
-  // const response = await axios({
-  //   method: "get",
-  //   url: loadAllListsURL,
-  //   data: {
-  //     userId: userId,
-  //   },
-  //   headers: {
-  //     "Access-Control-Allow-Origin": "*",
-  //     "Content-Type": "application/json",
-  //   },
-  // });
-  // var returnedData = JsonStringify(response);
-  // return returnedData;
 }
 function signOut() {
   localStorage.clear();
   window.location.reload();
 }
-// function hideModal() {
-//   let modal = document.querySelector(".modal fade");
-//   $(modal).modal("hide");
-// }
 
 async function saveList() {
   const nameData = [];
@@ -451,33 +438,26 @@ async function saveList() {
     });
 }
 function redirectToMaps() {
-  window.location.href = "map.html";
+  window.location.href = "about.html";
 }
-// async function saveList() {
-//   const list = [];
-//   const listItems = document.querySelectorAll(".itemList");
-//   listItems.forEach((item) => {
-//     list.push(item.innerText);
-//   });
-//   console.log(list);
-//   await axios({
-//     method: "post",
-//     url: saveListURL,
-//     data: {
-//       list: list,
-//       userId: localStorage.getItem("userId"),
-//     },
-//     headers: {
-//       "Access-Control-Allow-Origin": "*",
-//       "Content-Type": "application/json",
-//     },
-//   })
-//     .then((response) => {
-//       if (response.status === 200) {
-//         alert("List saved successfully.");
-//       }
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-// }
+function clearScreen() {
+  document.getElementById("result").value = "";
+}
+
+// This function display values
+function display(value) {
+  document.getElementById("result").value += value;
+}
+
+// This function evaluates the expression and returns result
+function calculate() {
+  var p = document.getElementById("result").value;
+  var q = eval(p);
+  document.getElementById("result").value = q;
+}
+function enableButtons() {
+  saveButton.disabled = false;
+  saveButton.className = "saveButton";
+  loadButton.disabled = false;
+  loadButton.className = "loadButton";
+}

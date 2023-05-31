@@ -3,7 +3,7 @@ function redirectToHome() {
 }
 
 window.addEventListener("DOMContentLoaded", (event) => {
-  const map = L.map("map").setView([40.84, 25.87], 12);
+  const map = L.map("map").setView([40.84, 25.87], 4);
   const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution:
@@ -17,8 +17,5 @@ window.addEventListener("DOMContentLoaded", (event) => {
     [40.847, 25.8507],
     [40.841, 25.87],
   ]).addTo(map);
-  L.marker([40.847, 25.8817])
-    .addTo(map)
-    .bindPopup("Testing map features.<br> This is nice!.")
-    .openPopup();
+  L.marker([40.847, 25.8817]).addTo(map);
 });

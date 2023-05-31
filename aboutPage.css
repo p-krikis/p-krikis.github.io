@@ -1,0 +1,196 @@
+.home {
+  width: 10%;
+  height: 50px;
+  background: none;
+  border: none;
+  font-family: "Hacked", sans-serif;
+  font-size: 64px;
+  color: #ffee00;
+  text-shadow: -3px -3px 0px #485c5a, 2px 2px 4px #00e6f6;
+}
+.home:hover {
+  color: #00e6f6;
+  text-shadow: -3px -3px 0px #485c5a, 2px 2px 4px #ffee00;
+}
+body {
+  background-color: #474747;
+}
+#map {
+  height: 60%;
+  width: 50%;
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  background-color: #ffee00;
+  border: #ffee00 2px solid;
+  border-image: linear-gradient(
+      45deg,
+      transparent,
+      cyan,
+      red,
+      cyan,
+      transparent
+    )
+    1;
+}
+@font-face {
+  font-family: "FutureTechno";
+  src: url(fonts/FutureTechnoItalic-X3EPj.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Revamped";
+  src: url(fonts/Revamped-X3q1a.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cyberway";
+  src: url(fonts/CyberwayRiders-lg97d.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Hacked";
+  src: url(fonts/Hacked-KerX.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AlphaCentauri";
+  src: url(fonts/Alphacentauri-MVY4p.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "B81";
+  src: url(fonts/BraveEightyoneRegular-ZVGvm.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image: url("images/10.png");
+  background-size: 100%;
+  overflow: hidden;
+}
+.infoContent {
+  width: 32%;
+  height: 60%;
+  margin-left: 5%;
+  border: #ffee00 2px solid;
+  padding-left: 2%;
+  position: relative;
+  border-image: linear-gradient(45deg, transparent, red, cyan, red, transparent)
+    1;
+  top: 3.7%;
+  background-color: #474747ee;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#map::before {
+  content: "";
+  position: absolute;
+  top: -1.5%;
+  left: -1.5%;
+  width: 75%;
+  height: 75%;
+  border-top: #ffee00 4px solid;
+  border-left: #ffee00 4px solid;
+  border-image: linear-gradient(
+      45deg,
+      transparent,
+      cyan,
+      red,
+      cyan,
+      transparent
+    )
+    1;
+  z-index: -1;
+}
+#map::after {
+  content: "";
+  position: absolute;
+  bottom: -1.5%;
+  right: -1.5%;
+  width: 75%;
+  height: 75%;
+  border-bottom: #ffee00 4px solid;
+  border-right: #ffee00 4px solid;
+  border-image: linear-gradient(
+      45deg,
+      transparent,
+      cyan,
+      red,
+      cyan,
+      transparent
+    )
+    1;
+  z-index: -1;
+}
+li {
+  font-family: "Revamped", sans-serif;
+  color: #ffee00;
+  font-size: 15px;
+  text-shadow: -1px -1px 1px #485c5a, 1px 1px 4px #00e6f6;
+}
+.infoList {
+  font-family: "FutureTechno", sans-serif;
+  font-style: italic;
+  text-align: left;
+  font-size: 13px;
+  margin-top: 2px;
+  margin-left: 15px;
+  margin-bottom: 3px;
+  margin-right: 5px;
+  color: #00e6f6;
+  text-shadow: -1px -1px 1px #485c5a, 1px 1px 4px #ffee00;
+}
+.title {
+  font-family: "Cyberway", sans-serif;
+  font-size: 62px;
+  color: #ffee00;
+  display: block;
+  text-align: center;
+  text-shadow: -3px -3px 6px #485c5a, 3px 3px 6px #00e6f6;
+}
+.info {
+  font-family: "AlphaCentauri", sans-serif;
+  font-size: 20px;
+  color: #2f00ff;
+  display: block;
+  text-align: left;
+  text-shadow: -3px -3px 6px #485c5a, 3px 3px 6px #00e6f6;
+}
+.footer {
+  border-top: 2px solid black;
+  border-image: linear-gradient(
+      45deg,
+      transparent,
+      cyan,
+      red,
+      cyan,
+      transparent
+    )
+    1;
+  text-align: center;
+  font-family: "B81", sans-serif;
+  font-size: 16px;
+  color: #ffee00;
+  text-shadow: -1px -1px 0px #485c5a, 1px 1px 4px #00e6f6;
+  width: 60%;
+  height: 40px;
+  padding-top: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  text-align: center;
+}

@@ -759,6 +759,9 @@ section {
   background: none;
   color: #18d5e2be;
   text-shadow: -1px -1px 2px #485c5a, 2px 2px 4px #ffee00;
+  position: absolute;
+  right: 7.5%;
+  top: 5px;
 }
 .signupButton,
 .signoutButton {
@@ -770,6 +773,9 @@ section {
   background: none;
   color: #18d5e2be;
   text-shadow: -1px -1px 2px #485c5a, 2px 2px 4px #ffee00;
+  position: absolute;
+  right: 0;
+  top: 5px;
 }
 .signoutButton {
   display: none;
@@ -1025,4 +1031,70 @@ audio::-webkit-media-controls-play-button {
   margin-left: 2%;
   margin-right: 2%;
   margin-bottom: 2%;
+}
+
+.calculator {
+  height: 380px;
+  width: 90%;
+  margin: auto;
+  background-color: #363986;
+  border-top: 2px dotted #ffee00;
+  border-bottom: 4px dashed #ffee00;
+}
+
+.display-box {
+  font-family: "B81", sans-serif;
+  background-color: #dcdbe1;
+  border: solid black 0.5px;
+  color: black;
+  border-radius: 5px;
+  width: 100%;
+  height: 80%;
+}
+
+.spBtn {
+  background-color: #c92265;
+  width: 100%;
+  height: 70%;
+  border: solid black 0.5px;
+}
+.spBtn #clearBtn {
+  height: 100%;
+}
+
+.calcButtons {
+  font-family: "B81", sans-serif;
+  background-color: #24277b;
+  color: white;
+  border: solid black 0.5px;
+  width: 100%;
+  height: 70%;
+  outline: none;
+}
+
+.calcButtons:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  color: black;
+}
+.calcButtons:hover {
+  border-color: #ffee00;
+}
+.spBtn:active {
+  background: #e98718;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  color: black;
+}
+.spBtn:hover {
+  border-color: #ffee00;
+}
+.disabledButton,
+.disabledButton:hover {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
