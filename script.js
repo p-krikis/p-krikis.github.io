@@ -144,6 +144,7 @@ window.onload = function () {
       btn.type = "button";
       btn.className = "loadSpecificList";
       btn.setAttribute("data-bs-dismiss", "modal");
+      btn.setAttribute("onclick", "clearList()");
       btn.innerText = `${res[i].listName}, ${res[i].timeCreated}`;
       loadLists.appendChild(btn);
     }
