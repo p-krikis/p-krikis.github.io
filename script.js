@@ -154,6 +154,11 @@ window.onload = function () {
   });
 
   //dark/light mode
+
+  ////////////////////////////////
+  //REPLACE WITH CCS FILE LATER//
+  //////////////////////////////
+
   appearanceMode.addEventListener("click", function () {
     var img = document.getElementById("appearanceButton");
     if (img.src.match("icons/iconLight.png")) {
@@ -415,20 +420,21 @@ function signOut() {
 async function saveList() {
   const nameData = [];
   const descData = [];
+  const fullList = [];
   const listItems = document.querySelectorAll(".itemList");
 
   listItems.forEach((item) => {
-    const itemFullList = item.innerText.split("\n\n"); // split each item and its description
-    listItems.forEach((item) => {
-      for (let i = 0; i < itemFullList.length; i++) {
-        if (i % 2 === 0) {
-          nameData.push(itemFullList[i]);
-        } else {
-          descData.push(itemFullList[i]);
-        }
+    const itemFullList = item.innerText.split("\n\n");
+    for (let i = 0; i < itemFullList.length; i++) {
+      if (i % 2 === 0) {
+        nameData.push(itemFullList[i]);
+      } else {
+        descData.push(itemFullList[i]);
       }
-    });
+    }
   });
+  fullList.push(nameData);
+  fullList.push(descData);
   const data = {
     listName: document.getElementById("listNameInput").value,
     nameData: nameData,
