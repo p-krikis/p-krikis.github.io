@@ -31,14 +31,16 @@ window.onload = function () {
 
   const saveListSubmit = document.getElementById("saveListNameSubmit");
   const loadButton = document.getElementById("loadButton");
+  console.log(localStorage);
 
   logoutButton.style.display = "none";
-  if (localStorage.getItem("user") != null) {
+  if (localStorage.getItem("userId") != null) {
     loginButton.style.display = "none";
     signupButton.style.display = "none";
-    logoutButton.style.display = "inline";
+    logoutButton.style.display = "block";
+    enableButtons();
   }
-  console.log(loadLists.innerHTML);
+
   //<button type="button" class="loadSpecificList" data-bs-dismiss="modal">List 2</button>
 
   addButton.addEventListener("click", function () {
@@ -51,7 +53,7 @@ window.onload = function () {
     if (
       numberOfItems === 1 &&
       itemListFull[0].children[0].children[0].innerText ===
-        "placeholderItemDesc"
+        "Please input a short description"
     ) {
       const li = document.getElementById("nameList");
       const p = document.getElementById("descList");
@@ -107,12 +109,12 @@ window.onload = function () {
 
   toggleMusic.addEventListener("click", function () {
     var img = document.getElementById("toggleMusic");
-    if (img.src.match("images/musicOff.png")) {
-      img.src = "images/musicOn.png";
+    if (img.src.match("icons/iconPlay.png")) {
+      img.src = "icons/iconPause.png";
       document.querySelector(".audioControls").style.visibility = "visible";
       document.getElementById("music").play();
     } else {
-      img.src = "images/musicOff.png";
+      img.src = "icons/iconPlay.png";
       document.querySelector(".audioControls").style.visibility = "hidden";
       document.getElementById("music").pause();
     }
@@ -120,13 +122,13 @@ window.onload = function () {
 
   toggleAnim.addEventListener("click", function () {
     var img = document.getElementById("removeAnim");
-    if (img.src.match("images/7.png")) {
+    if (img.src.match("icons/iconPauseAnim.png")) {
       document.getElementById("body").style.backgroundImage =
         "url('images/bgStatic.png')";
       document.getElementById("body").style.backgroundSize = "100%";
-      img.src = "images/8.png";
+      img.src = "icons/iconPlayAnim.png";
     } else {
-      img.src = "images/7.png";
+      img.src = "icons/iconPauseAnim.png";
       document.getElementById("body").style.backgroundImage =
         "url('images/bgGif.gif')";
       document.getElementById("body").style.backgroundSize = "100%";
@@ -145,6 +147,7 @@ window.onload = function () {
       btn.className = "loadSpecificList";
       btn.setAttribute("data-bs-dismiss", "modal");
       btn.setAttribute("onclick", "clearList()");
+      btn.setAttribute("id", `${res[i].listName}`);
       btn.innerText = `${res[i].listName}, ${res[i].timeCreated}`;
       loadLists.appendChild(btn);
     }
@@ -153,8 +156,8 @@ window.onload = function () {
   //dark/light mode
   appearanceMode.addEventListener("click", function () {
     var img = document.getElementById("appearanceButton");
-    if (img.src.match("images/5.png")) {
-      img.src = "images/6.png";
+    if (img.src.match("icons/iconLight.png")) {
+      img.src = "icons/iconDark.png";
       document.getElementById("body").style.backgroundImage =
         "url('images/bgAlt.png')";
       document.getElementById("body").style.backgroundSize = "100%";
@@ -206,7 +209,7 @@ window.onload = function () {
       document.querySelector(".removeAnim").style.display = "none";
       document.querySelector(".toggleMusic").style.marginRight = "49.4%";
     } else {
-      img.src = "images/5.png";
+      img.src = "icons/iconLight.png";
       document.getElementById("body").style.backgroundImage =
         "url('images/bgGif.gif')";
       document.getElementById("body").style.backgroundSize = "100%";
@@ -260,7 +263,6 @@ window.onload = function () {
       document.querySelector(".signupSubmit").style.color = "#18d5e2be";
       document.querySelector(".signupCancel").style.color = "#18d5e2be";
       document.querySelector(".removeAnim").style.display = "flex";
-      document.querySelector(".toggleMusic").style.marginRight = "0";
     }
   });
   signupSubmit.addEventListener("click", function () {
@@ -475,7 +477,11 @@ function enableButtons() {
   loadButton.disabled = false;
   loadButton.className = "loadButton";
 }
+
 function clearList() {
   const loadLists = document.querySelector(".loadLists");
   loadLists.innerHTML = "";
+}
+function redirectToWeather() {
+  window.location.href = "weather.html";
 }
