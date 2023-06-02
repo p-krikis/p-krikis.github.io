@@ -4,9 +4,9 @@ const signupInfoURL =
 const saveListURL = "https://localhost:7239/api/RequestHandling/saveListData";
 const loadAllListsURL =
   "https://localhost:7239/api/RequestHandling/getAllLists"; //requires userid
-const loadSingleList =
+const loadSingleListURL =
   "https://localhost:7239/api/RequestHandling/loadSpecificList"; //requires userid + listname
-const deleteList = "https://localhost:7239/api/RequestHand/ling/deleteList"; //requires userid + listname
+const deleteListURL = "https://localhost:7239/api/RequestHandling/deleteList"; //requires userid + listname
 
 var isConnected = false;
 
@@ -31,7 +31,6 @@ window.onload = function () {
 
   const saveListSubmit = document.getElementById("saveListNameSubmit");
   const loadButton = document.getElementById("loadButton");
-  console.log(localStorage);
 
   logoutButton.style.display = "none";
   if (localStorage.getItem("userId") != null) {
@@ -50,29 +49,15 @@ window.onload = function () {
       alert("Please enter a value for both fields.");
       return;
     }
-    if (
-      numberOfItems === 1 &&
-      itemListFull[0].children[0].children[0].innerText ===
-        "Please input a short description"
-    ) {
-      const li = document.getElementById("nameList");
-      const p = document.getElementById("descList");
-      li.innerHTML = itemName;
-      p.innerHTML = itemDesc;
-      li.appendChild(p);
-      numberOfItems++;
-    } else {
-      const li = document.createElement("li");
-      const p = document.createElement("p");
-      li.id = "nameList";
-      p.id = "descList";
-      p.className = "descList";
-      li.innerHTML = itemName;
-      p.innerHTML = itemDesc;
-      itemList.appendChild(li);
-      li.appendChild(p);
-      numberOfItems++;
-    }
+    const li = document.createElement("li");
+    const p = document.createElement("p");
+    li.setAttribute("id", "nameList");
+    li.appendChild(document.createTextNode(itemName));
+    p.setAttribute("id", "descList");
+    p.appendChild(document.createTextNode(itemDesc));
+    p.className = "descList";
+    itemList.appendChild(li);
+    li.appendChild(p);
     document.getElementById("input1").value = "";
     document.getElementById("input2").value = "";
     document.getElementById("input1").focus();
@@ -135,8 +120,6 @@ window.onload = function () {
     }
   });
 
-  //clearList()
-
   loadButton.addEventListener("click", async function () {
     userId = localStorage.getItem("userId");
     const res = await loadAllLists(userId);
@@ -149,9 +132,84 @@ window.onload = function () {
       btn.setAttribute("onclick", "clearList()");
       btn.setAttribute("id", `${res[i].listName}`);
       btn.innerText = `${res[i].listName}, ${res[i].timeCreated}`;
+      const x = document.createElement("button");
+      x.type = "button";
+      x.className = "deleteList";
+      x.setAttribute("id", `${res[i].listName}`);
+      x.setAttribute("data-bs-dismiss", "modal");
       loadLists.appendChild(btn);
+      loadLists.appendChild(x);
     }
+    const loadTargetListButtons =
+      document.querySelectorAll(".loadSpecificList");
+    loadTargetListButtons.forEach(function (btn) {
+      btn.addEventListener("click", async function () {
+        userId = localStorage.getItem("userId");
+        listName = btn.getAttribute("id");
+        const listData = await loadSingleList(userId, listName);
+        if (itemList === null) {
+          for (let i = 0; i < listData[0].nameData.length; i++) {
+            const li = document.createElement("li");
+            const p = document.createElement("p");
+            li.setAttribute("id", "nameList");
+            li.appendChild(document.createTextNode(listData[0].nameData[i]));
+            p.setAttribute("id", "descList");
+            p.appendChild(document.createTextNode(listData[0].descData[i]));
+            p.className = "descList";
+            itemList.appendChild(li);
+            li.appendChild(p);
+          }
+        } else {
+          itemList.innerHTML = null;
+          for (let i = 0; i < listData[0].nameData.length; i++) {
+            const li = document.createElement("li");
+            const p = document.createElement("p");
+            li.setAttribute("id", "nameList");
+            li.appendChild(document.createTextNode(listData[0].nameData[i]));
+            p.setAttribute("id", "descList");
+            p.appendChild(document.createTextNode(listData[0].descData[i]));
+            p.className = "descList";
+            itemList.appendChild(li);
+            li.appendChild(p);
+          }
+        }
+      });
+    });
+    const deleteListBTN = document.querySelectorAll(".deleteList");
+    deleteListBTN.forEach(function (x) {
+      x.addEventListener("click", async function () {
+        userId = localStorage.getItem("userId");
+        listName = x.getAttribute("id");
+        //console.log(userId, listName);
+        const response = await deleteSingleList(userId, listName);
+        //console.log();
+      });
+    });
   });
+
+  // if (
+  //   numberOfItems === 1 &&
+  //   itemListFull[0].children[0].children[0].innerText ===
+  //     "Please input a short description"
+  // ) {
+  //   const li = document.getElementById("nameList");
+  //   const p = document.getElementById("descList");
+  //   li.innerHTML = listName.nameData[i];
+  //   p.innerHTML = listName.descData[i];
+  //   li.appendChild(p);
+  //   numberOfItems++;
+  // } else {
+  //   const li = document.createElement("li");
+  //   const p = document.createElement("p");
+  //   li.id = "nameList";
+  //   p.id = "descList";
+  //   p.className = "descList";
+  //   li.innerHTML = listName.nameData[i];
+  //   p.innerHTML = listName.descData[i];
+  //   itemList.appendChild(li);
+  //   li.appendChild(p);
+  //   numberOfItems++;
+  // }
 
   //dark/light mode
 
@@ -207,12 +265,11 @@ window.onload = function () {
         "#c700009a";
       document.getElementById("signupModalFooter").style.backgroundColor =
         "#800000c4";
-      document.querySelector(".loginSubmit").style.color = "#33a7ff";
-      document.querySelector(".loginCancel").style.color = "#33a7ff";
-      document.querySelector(".signupSubmit").style.color = "#33a7ff";
-      document.querySelector(".signupCancel").style.color = "#33a7ff";
-      document.querySelector(".removeAnim").style.display = "none";
-      document.querySelector(".toggleMusic").style.marginRight = "49.4%";
+      document.getElementById("loginSubmit").style.color = "#33a7ff";
+      document.getElementById("loginCancel").style.color = "#33a7ff";
+      document.getElementById("signupSubmit").style.color = "#33a7ff";
+      document.getElementById("signupCancel").style.color = "#33a7ff";
+      document.querySelector(".removeAnim").style.visibility = "hidden";
     } else {
       img.src = "icons/iconLight.png";
       document.getElementById("body").style.backgroundImage =
@@ -263,11 +320,11 @@ window.onload = function () {
         "#363986";
       document.getElementById("signupModalFooter").style.backgroundColor =
         "#24277b";
-      document.querySelector(".loginSubmit").style.color = "#18d5e2be";
-      document.querySelector(".loginCancel").style.color = "#18d5e2be";
-      document.querySelector(".signupSubmit").style.color = "#18d5e2be";
-      document.querySelector(".signupCancel").style.color = "#18d5e2be";
-      document.querySelector(".removeAnim").style.display = "flex";
+      document.getElementById("loginSubmit").style.color = "#18d5e2be";
+      document.getElementById("loginCancel").style.color = "#18d5e2be";
+      document.getElementById("signupSubmit").style.color = "#18d5e2be";
+      document.getElementById("signupCancel").style.color = "#18d5e2be";
+      document.querySelector(".removeAnim").style.visibility = "visible";
     }
   });
   signupSubmit.addEventListener("click", function () {
@@ -420,7 +477,6 @@ function signOut() {
 async function saveList() {
   const nameData = [];
   const descData = [];
-  const fullList = [];
   const listItems = document.querySelectorAll(".itemList");
 
   listItems.forEach((item) => {
@@ -433,8 +489,6 @@ async function saveList() {
       }
     }
   });
-  fullList.push(nameData);
-  fullList.push(descData);
   const data = {
     listName: document.getElementById("listNameInput").value,
     nameData: nameData,
@@ -458,6 +512,56 @@ async function saveList() {
     .catch((error) => {
       console.log(error);
     });
+}
+async function loadSingleList(userId, listName) {
+  let listResp = await axios({
+    method: "post",
+    url: loadSingleListURL,
+    data: {
+      userId: userId,
+      listName: listName,
+    },
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (response) {
+        return response.data;
+      } else {
+        console.log("NO RESPONSE");
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  return listResp;
+}
+async function deleteSingleList(userId, listName) {
+  let res = await axios({
+    method: "delete",
+    url: deleteListURL,
+    data: {
+      userId: userId,
+      listName: listName,
+    },
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (response) {
+        return response.data;
+      } else {
+        console.log("NO RESPONSE");
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  return res;
 }
 function redirectToMaps() {
   window.location.href = "about.html";

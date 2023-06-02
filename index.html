@@ -105,12 +105,11 @@
                 <div class="modal-body" id="loadListsModalBody">
                   <form id="loadListsForm">
                     <div class="loadLists">
-                        
                     </div>
                   </form>
                 </div>
-                <div class="modal-footer" id="saveListModalFooter">
-                  <button type="button" id="saveListNameCancel" class="modalCancel" data-bs-dismiss="modal" onclick="clearList()">Close</button>
+                <div class="modal-footer" id="loadListModalFooter">
+                  <button type="button" id="loadListNameCancel" class="modalCancel" data-bs-dismiss="modal" onclick="clearList()">Close</button>
                 </div>
               </div>
             </div>
@@ -125,12 +124,9 @@
                   <table class="calculator" >
                     <tr>
                       <td colspan="3"> <input class="display-box" type="text" id="result" disabled /> </td>
-                   
-                      <!-- clearScreen() function clears all the values -->
                       <td> <input type="button" class="spBtn" value="C" onclick="clearScreen()" id="clearBtn" /> </td>
                     </tr>
                     <tr>
-                      <!-- display() function displays the value of clicked button -->
                       <td> <input type="button" class="calcButtons" value="1" onclick="display('1')" /> </td>
                       <td> <input type="button" class="calcButtons" value="2" onclick="display('2')" /> </td>
                       <td> <input type="button" class="calcButtons" value="3" onclick="display('3')" /> </td>
@@ -151,8 +147,6 @@
                     <tr>
                       <td> <input type="button" class="calcButtons" value="." onclick="display('.')" /> </td>
                       <td> <input type="button" class="calcButtons" value="0" onclick="display('0')" /> </td>
-                   
-                      <!-- calculate() function evaluates the mathematical expression -->
                       <td> <input type="button" class="spBtn" value="=" onclick="calculate()" id="btn" /> </td>
                       <td> <input type="button" class="calcButtons" value="*" onclick="display('*')" /> </td>
                     </tr>
@@ -195,10 +189,7 @@
           </div>
           <div class="inputList" id="inputList">
             <ol id="itemList" class="itemList">
-              <li id="nameList">
-                Please input what you want to call the item
-                <p class="descList" id="descList">Please input a short description</p>
-              </li>
+              
             </ol>
           </div>
         <div class="listControlButtons">

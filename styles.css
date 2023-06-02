@@ -1032,13 +1032,35 @@ audio::-webkit-media-controls-play-button {
   box-shadow: 3px 3px 5px #00e6f6c5;
 }
 .loadSpecificList {
-  width: 90%;
+  width: 78%;
   height: 50px;
   margin-left: 5%;
-  margin-right: auto;
+  margin-right: 2%;
   margin-bottom: 2%;
+  background-color: #24277b;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #ffee00;
+  border: #00e6f6 1px solid;
+  text-shadow: -2px -2px 4px #485c5a, 2px 2px 4px #18d5e2be;
 }
-
+.loadSpecificList:hover {
+  color: #00e6f6;
+  border: #ffee00 1px solid;
+}
+.deleteList {
+  width: 10%;
+  height: 50px;
+  margin-bottom: 2%;
+  background: none;
+  background-image: url(icons/iconX.png);
+  position: absolute;
+  border: #ff0055 1px inset;
+  border-radius: 4px;
+}
+.deleteList:hover {
+  background-color: #ff0055;
+}
 .calculator {
   height: 380px;
   width: 90%;
