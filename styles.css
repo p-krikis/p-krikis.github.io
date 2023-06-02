@@ -764,6 +764,54 @@ section {
   background-color: #236c9c;
   border-radius: 25%;
 }
+.profileMain {
+  background: rgb(36,39,123);
+  width: 70%;
+  height: 220px;
+  position: relative;
+  top: 0;
+  left: 30%;
+}
+.profileSide {
+  background: linear-gradient(90deg, rgba(36,39,123,1) 99%, rgba(255,255,255,1) 99%);
+  width: 30%;
+  height: 220px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+}
+.text-muted {
+  font-size: 12px;
+  font-family: "AlphaCentauri", sans-serif;
+  color: #00ffaa;
+  padding-left: 5%;
+}
+.infoLabel {
+  color: #00ffaa;
+  padding-left: 1.5%;
+}
+.profileClose{
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  width: 36px;
+  height: 36px;
+}
+.pInfo {
+  position: relative;
+  top: 5%;
+  left: 3%;
+}
+#profileModalFooter {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+#profileCancel {
+  width: 28%;
+  position: relative;
+  right: 36%;
+  bottom: 0;
+}
 .loginButton {
   width: 6%;
   margin-left: 24%;
@@ -1134,3 +1182,36 @@ audio::-webkit-media-controls-play-button {
   cursor: not-allowed;
   pointer-events: none;
 }
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #f6d365;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+  }
+  .pfp {
+    border-radius: 8px;
+  }
+  .profileBG {
+    background-color: #24277b;
+  }
+  .nameSide {
+    font-family: "AlphaCentauri", sans-serif;
+    color: #ffee00;
+    position: absolute;
+    width: 90%;
+    bottom: 15%;
+    right: 5%;
+  }
+  .roleSide {
+    color: #ffee00;
+    font-family: "B81", sans-serif;
+    position: absolute;
+    width: 90%;
+    height: auto;
+    bottom: 0;
+    right: 5%;
+  }

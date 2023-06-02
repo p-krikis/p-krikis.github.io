@@ -15,7 +15,7 @@
       <input type="image" src="icons/iconLight.png" class="appearanceButton" id="appearanceButton">
       <input type="image" src="icons/iconPlay.png" class="toggleMusic" id="toggleMusic">
       <input type="image" src="icons/iconPauseAnim.png" class="removeAnim" id="removeAnim">
-      <input type="image" src="icons/iconProfile.png" class="profile" id="profile" data-bs-toggle="modal" data-bs-target="#profileModal">
+      <input type="image" class="profile" src="icons/iconProfile.png" id="profile" data-bs-toggle="modal" data-bs-target="#profileModal">
       <button type="button" class="loginButton" id="loginButton" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
       <button type="button" class="signupButton" id="signupButton" data-bs-toggle="modal" data-bs-target="#signupModal">Sign up</button>
       <button type="button" class="signoutButton" id="signoutButton">Sign out</button>
@@ -77,8 +77,8 @@
               </div>
             </div>
           </div>
-          <div class="modal fade" id="saveListModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+          <div class="modal fade" id="saveListModal" tabindex="-1" aria-labelledby="saveListModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header" id="saveListModalHeader">
                   <h1 class="modal-title" id="saveListModalTitle">List name</h1>
@@ -98,7 +98,7 @@
             </div>
           </div>
           <div class="modal fade" id="loadListsModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header" id="loadListsModalHeader">
                   <h1 class="modal-title" id="loadListsModalTitle">Saved Lists</h1>
@@ -188,7 +188,82 @@
               </div>
             </div>
           </div>
-          
+          <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="profileMain" id="profileMain">
+                  <h4 class="pInfo">Profile Info</h4>
+                    <input type="image" src="icons/iconX.png" id="profileClose" class="profileClose" data-bs-dismiss="modal">
+                  <hr class="profileHR">
+                        <div class="row pt-1 infoLabel">
+                          <div class="col-6 mb-3">
+                            <h6 class="infoLabel">Email</h6>
+                            <p class="text-muted">[email]</p>
+                          </div>
+                          <div class="col-6 mb-3 infoLabel">
+                            <h6 class="infoLabel">Username</h6>
+                            <p class="text-muted">[username]</p>
+                          </div>
+                          <div class="col-6 mb-3">
+                            <h6 class="infoLabel">UserID</h6>
+                            <p class="text-muted">[userid]</p>
+                          </div>
+                        </div>
+                </div>
+                <div class="profileSide" id="profileSide">
+                  <img src="profilePics/pfp3.jpg"
+                        alt="Avatar" class="pfp my-5" style="width: 80px;" />
+                      <h5 class="nameSide">[GloriousName]</h5>
+                      <p class="roleSide">[role/occupation]</p>
+                      <i class="far fa-edit mb-5"></i>
+                </div>
+                <div class="modal-footer" id="profileModalFooter">
+                  <button type="button" id="profileCancel" class="modalCancel" data-bs-dismiss="modal" onclick="clearList()">Edit profile info</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true"> -->
+          <!-- <div class="profileModal py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col col-lg-6 mb-4 mb-lg-0">
+                <div class="card mb-3" style="border-radius: .5rem;">
+                  <div class="row g-0">
+                    <div class="col-md-4 gradient-custom text-center text-white"
+                      style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                      <img src="profilePics/pfp3.jpg"
+                        alt="Avatar" class="pfp my-5" style="width: 80px;" />
+                      <h5>[username]</h5>
+                      <p>[role/occupation]</p>
+                      <i class="far fa-edit mb-5"></i>
+                    </div>
+                    <div class="profileBG col-md-8">
+                      <div class="card-body p-4">
+                        <h6>Information</h6>
+                        <hr class="profileHR">
+                        <div class="row pt-1">
+                          <div class="col-6 mb-3">
+                            <h6>Email</h6>
+                            <p class="text-muted">[emai]</p>
+                          </div>
+                          <div class="col-6 mb-3">
+                            <h6>Username</h6>
+                            <p class="text-muted">[username]</p>
+                          </div>
+                          <div class="col-6 mb-3">
+                            <h6>UserID</h6>
+                            <p class="text-muted">[userid]</p>
+                          </div>
+                        </div>
+                        <hr class="profileHR">
+                        <button class="profileEdit">Edit profile info</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
           <div class="inputList" id="inputList">
             <ol id="itemList" class="itemList">
               

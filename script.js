@@ -40,10 +40,13 @@ window.onload = function () {
     enableButtons();
   }
 
-  var myModal = new bootstrap.Modal(
-    document.getElementById("profileModal"),
-    options
-  );
+
+  //const profileModal = document.querySelector(".profileModal");
+  //var profModal = new bootstrap.Modal(profileModal, {});
+  // var myModal = new bootstrap.Modal(
+  //   document.getElementById("profileModal"),
+  //   options
+  // );
 
   const profileBtn = document.getElementById("profile");
   profileBtn.addEventListener("click", function () {});
