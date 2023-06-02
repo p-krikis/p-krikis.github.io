@@ -756,6 +756,14 @@ section {
   background-color: #236c9c;
   border-radius: 25%;
 }
+.profile {
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #236c9c;
+  border-radius: 25%;
+}
 .loginButton {
   width: 6%;
   margin-left: 24%;

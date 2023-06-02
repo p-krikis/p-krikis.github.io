@@ -40,6 +40,13 @@ window.onload = function () {
     enableButtons();
   }
 
+  var myModal = new bootstrap.Modal(
+    document.getElementById("profileModal"),
+    options
+  );
+
+  const profileBtn = document.getElementById("profile");
+  profileBtn.addEventListener("click", function () {});
   //<button type="button" class="loadSpecificList" data-bs-dismiss="modal">List 2</button>
 
   addButton.addEventListener("click", function () {
@@ -187,30 +194,6 @@ window.onload = function () {
     });
   });
 
-  // if (
-  //   numberOfItems === 1 &&
-  //   itemListFull[0].children[0].children[0].innerText ===
-  //     "Please input a short description"
-  // ) {
-  //   const li = document.getElementById("nameList");
-  //   const p = document.getElementById("descList");
-  //   li.innerHTML = listName.nameData[i];
-  //   p.innerHTML = listName.descData[i];
-  //   li.appendChild(p);
-  //   numberOfItems++;
-  // } else {
-  //   const li = document.createElement("li");
-  //   const p = document.createElement("p");
-  //   li.id = "nameList";
-  //   p.id = "descList";
-  //   p.className = "descList";
-  //   li.innerHTML = listName.nameData[i];
-  //   p.innerHTML = listName.descData[i];
-  //   itemList.appendChild(li);
-  //   li.appendChild(p);
-  //   numberOfItems++;
-  // }
-
   //dark/light mode
 
   ////////////////////////////////
@@ -269,7 +252,7 @@ window.onload = function () {
       document.getElementById("loginCancel").style.color = "#33a7ff";
       document.getElementById("signupSubmit").style.color = "#33a7ff";
       document.getElementById("signupCancel").style.color = "#33a7ff";
-      document.querySelector(".removeAnim").style.visibility = "hidden";
+      document.querySelector(".removeAnim").style.display = "none";
     } else {
       img.src = "icons/iconLight.png";
       document.getElementById("body").style.backgroundImage =
@@ -324,7 +307,7 @@ window.onload = function () {
       document.getElementById("loginCancel").style.color = "#18d5e2be";
       document.getElementById("signupSubmit").style.color = "#18d5e2be";
       document.getElementById("signupCancel").style.color = "#18d5e2be";
-      document.querySelector(".removeAnim").style.visibility = "visible";
+      document.querySelector(".removeAnim").style.display = "flex";
     }
   });
   signupSubmit.addEventListener("click", function () {
