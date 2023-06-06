@@ -179,6 +179,12 @@
                     <div class="passwordInputField">
                       <input type="password" id="passwordConfirm" class="form-control" placeholder="Confirm password"/>
                     </div>
+                    <div class="displayNameInputField">
+                      <input type="text" id="displayNameField" class="form-control" placeholder="Input your displayed name"/>
+                    </div>
+                    <div class="roleInputField">
+                      <input type="text" id="roleField" class="form-control" placeholder="Input your role"/>
+                    </div>
                 </form>
                 </div>
                 <div class="modal-footer" id="signupModalFooter">
@@ -198,72 +204,31 @@
                         <div class="row pt-1 infoLabel">
                           <div class="col-6 mb-3">
                             <h6 class="infoLabel">Email</h6>
-                            <p class="text-muted">[email]</p>
+                            <p class="infoContent" id="email">[email]</p>
                           </div>
                           <div class="col-6 mb-3 infoLabel">
                             <h6 class="infoLabel">Username</h6>
-                            <p class="text-muted">[username]</p>
+                            <p class="infoContent" id="username">[username]</p>
                           </div>
                           <div class="col-6 mb-3">
                             <h6 class="infoLabel">UserID</h6>
-                            <p class="text-muted">[userid]</p>
+                            <p class="infoContent" id="userid">[userid]</p>
                           </div>
                         </div>
                 </div>
                 <div class="profileSide" id="profileSide">
                   <img src="profilePics/pfp3.jpg"
                         alt="Avatar" class="pfp my-5" style="width: 80px;" />
-                      <h5 class="nameSide">[GloriousName]</h5>
-                      <p class="roleSide">[role/occupation]</p>
+                      <h5 class="nameSide" id="nameSide">[GloriousName]</h5>
+                      <p class="roleSide" id="roleSide">[role/occupation]</p>
                       <i class="far fa-edit mb-5"></i>
                 </div>
                 <div class="modal-footer" id="profileModalFooter">
-                  <button type="button" id="profileCancel" class="modalCancel" data-bs-dismiss="modal" onclick="clearList()">Edit profile info</button>
+                  <button type="button" id="profileEdit" class="modalCancel" data-bs-dismiss="modal" onclick="clearList()">View profile</button>
                 </div>
               </div>
             </div>
           </div>
-          <!-- <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true"> -->
-          <!-- <div class="profileModal py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-              <div class="col col-lg-6 mb-4 mb-lg-0">
-                <div class="card mb-3" style="border-radius: .5rem;">
-                  <div class="row g-0">
-                    <div class="col-md-4 gradient-custom text-center text-white"
-                      style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                      <img src="profilePics/pfp3.jpg"
-                        alt="Avatar" class="pfp my-5" style="width: 80px;" />
-                      <h5>[username]</h5>
-                      <p>[role/occupation]</p>
-                      <i class="far fa-edit mb-5"></i>
-                    </div>
-                    <div class="profileBG col-md-8">
-                      <div class="card-body p-4">
-                        <h6>Information</h6>
-                        <hr class="profileHR">
-                        <div class="row pt-1">
-                          <div class="col-6 mb-3">
-                            <h6>Email</h6>
-                            <p class="text-muted">[emai]</p>
-                          </div>
-                          <div class="col-6 mb-3">
-                            <h6>Username</h6>
-                            <p class="text-muted">[username]</p>
-                          </div>
-                          <div class="col-6 mb-3">
-                            <h6>UserID</h6>
-                            <p class="text-muted">[userid]</p>
-                          </div>
-                        </div>
-                        <hr class="profileHR">
-                        <button class="profileEdit">Edit profile info</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
           <div class="inputList" id="inputList">
             <ol id="itemList" class="itemList">
               

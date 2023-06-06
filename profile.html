@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="profile.css" rel="stylesheet" />
+    <title>Profile Settings</title>
+
+    <link rel="icon" type="image/x-icon" href="icons/iconArrow.png" />
+  </head>
+  <body>
+    <div class="topSpacer">
+      <button
+        type="button"
+        class="home"
+        id="homeButton"
+        onclick="redirectToHome()"
+      >
+        Home
+      </button>
+    </div>
+    <div class="leftSpacer">
+      <img
+        src="profilePics/pfp3.jpg"
+        alt="Avatar"
+        class="pfp"
+        style="width: 80%"
+      />
+      <input type="file" accept="image/*" class="imageUploader" />
+    </div>
+    <div class="container">
+      <h1 class="header">>Profile information</h1>
+      <div class="infoContainer">
+        <h3>Email:</h3>
+        <p class="existingValue">[email]</p>
+        <input type="email" class="inputField" placeholder="email" />
+      </div>
+      <div class="infoContainer">
+        <h3>Username:</h3>
+        <p class="existingValue">[username]</p>
+        <input type="text" class="inputField" placeholder="username" />
+      </div>
+      <div class="infoContainer">
+        <h3>Display name:</h3>
+        <p class="existingValue">[displayName]</p>
+        <input type="text" class="inputField" placeholder="displayName" />
+      </div>
+      <div class="infoContainer">
+        <h3>Role:</h3>
+        <p class="existingValue">[role]</p>
+        <input type="text" class="inputField" placeholder="role" />
+      </div>
+      <div class="infoContainer">
+        <h3>Password:</h3>
+        <p class="existingValue">[password]</p>
+        <input type="password" class="inputField" placeholder="password" />
+      </div>
+      <div class="infoContainer">
+        <h3>UserID:</h3>
+        <p class="userid">[userid]</p>
+      </div>
+      <button type="button" class="edit" id="editBtn">Edit</button>
+      <button type="button" class="cancel" id="cancelBtn">Cancel</button>
+      <button type="button" class="save" id="saveBtn">Save</button>
+      <button type="button" class="delete" id="deleteBtn">Delete</button>
+    </div>
+    <script src="profileScript.js"></script>
+    <footer class="footer">Profile details</footer>
+  </body>
+</html>

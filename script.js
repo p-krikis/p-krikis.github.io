@@ -7,7 +7,8 @@ const loadAllListsURL =
 const loadSingleListURL =
   "https://localhost:7239/api/RequestHandling/loadSpecificList"; //requires userid + listname
 const deleteListURL = "https://localhost:7239/api/RequestHandling/deleteList"; //requires userid + listname
-
+const fetchUserInfoURL =
+  "https://localhost:7239/api/RequestHandling/fetchUserInfo"; //requires userid
 var isConnected = false;
 
 window.onload = function () {
@@ -32,14 +33,20 @@ window.onload = function () {
   const saveListSubmit = document.getElementById("saveListNameSubmit");
   const loadButton = document.getElementById("loadButton");
 
+  const profileButton = document.getElementById("profile");
+  const profileEdit = document.getElementById("profileEdit");
+
   logoutButton.style.display = "none";
+  profileButton.style.display = "none";
+
   if (localStorage.getItem("userId") != null) {
     loginButton.style.display = "none";
     signupButton.style.display = "none";
     logoutButton.style.display = "block";
-    enableButtons();
-  }
 
+    enableButtons();
+    profileButton.style.display = "block";
+  }
 
   //const profileModal = document.querySelector(".profileModal");
   //var profModal = new bootstrap.Modal(profileModal, {});
@@ -49,8 +56,23 @@ window.onload = function () {
   // );
 
   const profileBtn = document.getElementById("profile");
-  profileBtn.addEventListener("click", function () {});
-  //<button type="button" class="loadSpecificList" data-bs-dismiss="modal">List 2</button>
+
+  const useridInfo = document.getElementById("userid");
+  const emailInfo = document.getElementById("email");
+  const usernameInfo = document.getElementById("username");
+  const nameSide = document.getElementById("nameSide");
+  const roleSide = document.getElementById("roleSide");
+
+  profileBtn.addEventListener("click", async function () {
+    userId = localStorage.getItem("userId");
+    let result = await fetchUserInfo(userId);
+    console.log(result);
+    useridInfo.innerText = userId;
+    emailInfo.innerText = result[0].email;
+    usernameInfo.innerText = result[0].username;
+    nameSide.innerText = result[0].displayName;
+    roleSide.innerText = result[0].role;
+  });
 
   addButton.addEventListener("click", function () {
     const itemName = document.getElementById("input1").value;
@@ -196,6 +218,9 @@ window.onload = function () {
       });
     });
   });
+  profileEdit.addEventListener("click", function () {
+    redirectToProfile();
+  });
 
   //dark/light mode
 
@@ -318,11 +343,15 @@ window.onload = function () {
     const email = document.getElementById("emailInput2").value;
     const password = document.getElementById("passwordTemplate").value;
     const passwordConfirm = document.getElementById("passwordConfirm").value;
+    const displayName = document.getElementById("displayNameField").value;
+    const role = document.getElementById("roleField").value;
     if (
       username.trim() === "" ||
       email.trim() === "" ||
       password.trim() === "" ||
-      passwordConfirm.trim() === ""
+      passwordConfirm.trim() === "" ||
+      displayName.trim() === "" ||
+      role.trim() === ""
     ) {
       alert("Please fill in all fields.");
       return;
@@ -341,7 +370,7 @@ window.onload = function () {
     for (let i = 0; i < 32; i++) {
       id += characters.charAt(Math.floor(Math.random() * characters.length));
     }
-    signup(username, email, password, id);
+    signup(username, email, password, id, displayName, role);
     clearForm();
   });
   loginSubmit.addEventListener("click", function () {
@@ -405,12 +434,14 @@ async function login(email, password) {
     return null;
   }
 }
-async function signup(username, email, password, id) {
+async function signup(username, email, password, id, displayName, role) {
   const data = {
     username: username,
     email: email,
     password: password,
     userId: id,
+    displayName: displayName,
+    role: role,
   };
   await axios({
     method: "post",
@@ -549,8 +580,35 @@ async function deleteSingleList(userId, listName) {
     });
   return res;
 }
+async function fetchUserInfo(userId) {
+  let resp = await axios({
+    method: "post",
+    url: fetchUserInfoURL,
+    data: {
+      userId: userId,
+    },
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (response) {
+        return response.data;
+      } else {
+        console.log("NO RESPONSE");
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  return resp;
+}
 function redirectToMaps() {
   window.location.href = "about.html";
+}
+function redirectToProfile() {
+  window.location.href = "profile.html";
 }
 function clearScreen() {
   document.getElementById("result").value = "";
