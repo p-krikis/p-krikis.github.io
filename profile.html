@@ -31,32 +31,47 @@
       <h1 class="header">>Profile information</h1>
       <div class="infoContainer">
         <h3>Email:</h3>
-        <p class="existingValue">[email]</p>
-        <input type="email" class="inputField" placeholder="email" />
+        <p class="existingValue" id="email">[email]</p>
+        <input
+          type="email"
+          class="inputField"
+          placeholder="email"
+          id="emailInput"
+        />
       </div>
       <div class="infoContainer">
         <h3>Username:</h3>
-        <p class="existingValue">[username]</p>
-        <input type="text" class="inputField" placeholder="username" />
+        <p class="existingValue" id="username">[username]</p>
+        <input
+          type="text"
+          class="inputField"
+          placeholder="username"
+          id="usernameInput"
+        />
       </div>
       <div class="infoContainer">
         <h3>Display name:</h3>
-        <p class="existingValue">[displayName]</p>
-        <input type="text" class="inputField" placeholder="displayName" />
+        <p class="existingValue" id="displayName">[displayName]</p>
+        <input
+          type="text"
+          class="inputField"
+          placeholder="displayName"
+          id="displayNameInput"
+        />
       </div>
       <div class="infoContainer">
         <h3>Role:</h3>
-        <p class="existingValue">[role]</p>
-        <input type="text" class="inputField" placeholder="role" />
-      </div>
-      <div class="infoContainer">
-        <h3>Password:</h3>
-        <p class="existingValue">[password]</p>
-        <input type="password" class="inputField" placeholder="password" />
+        <p class="existingValue" id="role">[role]</p>
+        <input
+          type="text"
+          class="inputField"
+          placeholder="role"
+          id="roleInput"
+        />
       </div>
       <div class="infoContainer">
         <h3>UserID:</h3>
-        <p class="userid">[userid]</p>
+        <p class="userid" id="userid">[userid]</p>
       </div>
       <button type="button" class="edit" id="editBtn">Edit</button>
       <button type="button" class="cancel" id="cancelBtn">Cancel</button>
@@ -65,5 +80,6 @@
     </div>
     <script src="profileScript.js"></script>
     <footer class="footer">Profile details</footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </body>
 </html>

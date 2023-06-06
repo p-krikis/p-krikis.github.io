@@ -66,7 +66,6 @@ window.onload = function () {
   profileBtn.addEventListener("click", async function () {
     userId = localStorage.getItem("userId");
     let result = await fetchUserInfo(userId);
-    console.log(result);
     useridInfo.innerText = userId;
     emailInfo.innerText = result[0].email;
     usernameInfo.innerText = result[0].username;
@@ -608,7 +607,7 @@ function redirectToMaps() {
   window.location.href = "about.html";
 }
 function redirectToProfile() {
-  window.location.href = "profile.html";
+  window.location.href = `profile.html?foo=${localStorage.getItem("userId")}`;
 }
 function clearScreen() {
   document.getElementById("result").value = "";
