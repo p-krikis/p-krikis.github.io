@@ -8,7 +8,7 @@ html {
   overflow: hidden;
 }
 body {
-  background-image: url("images/bgGif.gif");
+  background-image: url("/backgroundImages/theme2BG.gif");
   background-size: 100%;
   height: 100%;
   width: 100%;
@@ -31,10 +31,10 @@ body {
   margin-right: 10%;
   font-family: "Hacked", sans-serif;
   font-size: 76px;
-  color: #ffee00;
+  color: #c70000;
   display: block;
   text-align: center;
-  text-shadow: -3px -3px 6px #485c5a, 3px 3px 6px #00e6f6;
+  text-shadow: -3px -3px 6px #485c5a, 3px 3px 6px #ffee00;
 }
 .actionButtons {
   margin-top: -10px;
@@ -57,7 +57,7 @@ input {
   font-style: italic;
   font-family: "FutureTechno", sans-serif;
   border-top-left-radius: 2px;
-  background-color: rgba(36, 39, 123, 0.85);
+  background-color: rgba(216, 56, 35, 0.55);
   color: #ffee00;
   text-shadow: -1px -1px 0px #485c5a, 1px 1px 4px #00e6f6;
   text-align: center;
@@ -78,7 +78,7 @@ input {
   text-align: center;
   font-family: "B81", sans-serif;
   font-size: 16px;
-  color: #ffee00;
+  color: #ff0055;
   text-shadow: -1px -1px 0px #485c5a, 1px 1px 4px #00e6f6;
   width: 100%;
   height: 40px;
@@ -89,14 +89,14 @@ input {
   text-align: center;
 }
 .gitLink {
-  color: #ff0055;
+  color: #ffee00;
 }
 .gitLink:hover {
-  color: #ffee00;
+  color: #00ffaa;
   text-shadow: -1px -1px 0px #485c5a, 1px 1px 4px #00e6f6;
 }
 .inputList {
-  background: rgba(36, 39, 123, 0.85);
+  background: rgba(216, 56, 35, 0.45);
   padding-top: 3px;
   padding-left: 8px;
   padding-right: 8px;
@@ -111,7 +111,7 @@ input {
   max-height: 250px;
   display: flex;
   flex-direction: column;
-  box-shadow: 3px 3px 5px #831faa;
+  box-shadow: 3px 3px 5px #1f4cc9;
 }
 ol {
   flex: 1;
@@ -121,7 +121,7 @@ li {
   font-family: "Revamped", sans-serif;
   color: #ffee00;
   font-size: 15px;
-  text-shadow: -1px -1px 1px #485c5a, 1px 1px 4px #00e6f6;
+  text-shadow: -1px -1px 1px #485c5a, 1px 1px 4px #0087f6;
 }
 
 .optionPanels {
@@ -141,11 +141,11 @@ li {
   background: linear-gradient(
     135deg,
     transparent 10%,
-    #831faa 35%,
-    #831faa 65%,
+    #aa5e1f 35%,
+    #aa5e1f 65%,
     transparent 90%
   );
-  text-shadow: -1px -1px 1px #485c5a, 1px 1px 4px #00e6f6;
+  text-shadow: -1px -1px 1px #485c5a, 1px 1px 4px #0087f6;
   position: relative;
 }
 .desc::before {
@@ -210,7 +210,7 @@ section {
 .itemDescInputField {
   font-family: "FutureTechno", sans-serif;
   color: #ffee00;
-  background-color: rgba(36, 39, 123, 0.85);
+  background-color: rgba(216, 56, 35, 0.55);
   border: none;
   height: 60%;
   width: 100%;
@@ -231,9 +231,9 @@ section {
 }
 .idBox {
   border: none;
-  background-color: rgba(36, 39, 123, 0.9);
+  background-color: rgba(216, 56, 35, 0.55);
   border: 1px solid #ffee00;
-  box-shadow: 0 7px 15px #00e6f6;
+  box-shadow: 0 3px 5px #00e6f6;
   width: 20%;
   margin-left: 40%;
   margin-right: 40%;
@@ -253,7 +253,7 @@ section {
   background: linear-gradient(
     45deg,
     transparent 15%,
-    rgba(36, 39, 123, 0.9) 10%
+    rgba(216, 56, 35, 0.55) 10%
   );
   border-top: 1px solid #000000;
   border-right: #000000 1px solid;
@@ -319,7 +319,7 @@ section {
   text-align: center;
   font-size: 20px;
   font-family: "AlphaCentauri", sans-serif;
-  background: linear-gradient(0, transparent 0, rgba(36, 39, 123, 0.9) 0%);
+  background: linear-gradient(0, transparent 0, rgba(216, 56, 35, 0.55) 0%);
   border-top: 1px solid #000000;
   border-right: 1px solid #000000;
   border-left: 1px solid #000000;
@@ -378,7 +378,7 @@ section {
   background: linear-gradient(
     315deg,
     transparent 15%,
-    rgba(36, 39, 123, 0.85) 10%
+    rgba(216, 56, 35, 0.55) 10%
   );
   border-top: 1px solid #000000;
   border-left: #000000 1px solid;
@@ -482,37 +482,37 @@ section {
 }
 @font-face {
   font-family: "FutureTechno";
-  src: url(fonts/FutureTechnoItalic-X3EPj.ttf);
+  src: url(/fonts/FutureTechnoItalic-X3EPj.ttf);
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Revamped";
-  src: url(fonts/Revamped-X3q1a.ttf);
+  src: url(/fonts/Revamped-X3q1a.ttf);
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Cyberway";
-  src: url(fonts/CyberwayRiders-lg97d.ttf);
+  src: url(/fonts/CyberwayRiders-lg97d.ttf);
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Hacked";
-  src: url(fonts/Hacked-KerX.ttf);
+  src: url(/fonts/Hacked-KerX.ttf);
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "AlphaCentauri";
-  src: url(fonts/Alphacentauri-MVY4p.ttf);
+  src: url(/fonts/Alphacentauri-MVY4p.ttf);
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "B81";
-  src: url(fonts/BraveEightyoneRegular-ZVGvm.ttf);
+  src: url(/fonts/BraveEightyoneRegular-ZVGvm.ttf);
   font-weight: normal;
   font-style: normal;
 }
@@ -535,8 +535,8 @@ section {
     #ffee00a9 15%,
     transparent 15%,
     transparent 20%,
-    #b757819f 20%,
-    #b757819f 80%,
+    rgba(216, 56, 35, 0.55) 20%,
+    rgba(216, 56, 35, 0.55) 80%,
     transparent 80%,
     transparent 85%,
     #00e6f6 85%,
@@ -601,19 +601,20 @@ section {
   border-top: #00ffff 1px solid;
 }
 .saveButton:active {
+  color: #ff0055;
   background: linear-gradient(
     45deg,
     transparent 10%,
-    #ffee00 10%,
-    #ffee00 15%,
+    rgba(240, 44, 18, 0.95) 10%,
+    rgba(240, 44, 18, 0.95) 15%,
     transparent 15%,
     transparent 20%,
-    #e72d2d9a 19%,
-    #e72d2d9a 81%,
+    #ffee00a9 19%,
+    #ffee00a9 81%,
     transparent 81%,
     transparent 85%,
-    #00e6f6 85%,
-    #00e6f6 88%,
+    #00ffaa 85%,
+    #00ffaa 88%,
     transparent 88%
   );
 }
@@ -631,8 +632,8 @@ section {
     #ffee00a9 15%,
     transparent 15%,
     transparent 20%,
-    #b757819f 20%,
-    #b757819f 80%,
+    rgba(216, 56, 35, 0.55) 20%,
+    rgba(216, 56, 35, 0.55) 80%,
     transparent 80%,
     transparent 85%,
     #00e6f6 85%,
@@ -697,19 +698,20 @@ section {
   border-top: #00ffff 1px solid;
 }
 .loadButton:active {
+  color: #ff0055;
   background: linear-gradient(
     315deg,
     transparent 10%,
-    #ffee00 10%,
-    #ffee00 15%,
+    rgba(240, 44, 18, 0.95) 10%,
+    rgba(240, 44, 18, 0.95) 15%,
     transparent 15%,
     transparent 20%,
-    #e72d2d9a 19%,
-    #e72d2d9a 81%,
+    #ffee00a9 19%,
+    #ffee00a9 81%,
     transparent 81%,
     transparent 85%,
-    #00e6f6 85%,
-    #00e6f6 88%,
+    #00ffaa 85%,
+    #00ffaa 88%,
     transparent 88%
   );
 }
@@ -720,7 +722,7 @@ section {
   display: flex;
   text-align: right;
   border-bottom: 3px solid #00ffff;
-  background-color: #0e105886;
+  background-color: rgba(216, 56, 35, 0.55);
   border-image: linear-gradient(
       to left,
       #e72d2d,
@@ -737,14 +739,14 @@ section {
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 5px;
-  background-color: #236c9c;
+  background-color: rgb(233, 103, 16);
   border-radius: 25%;
 }
 .removeAnim {
   width: 40px;
   height: 40px;
   margin: 5px;
-  background-color: #236c9c;
+  background-color: rgb(233, 103, 16);
   border-radius: 25%;
 }
 .toggleMusic {
@@ -753,7 +755,7 @@ section {
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 5px;
-  background-color: #236c9c;
+  background-color: rgb(233, 103, 16);
   border-radius: 25%;
 }
 .profile {
@@ -761,11 +763,11 @@ section {
   height: 40px;
   margin-top: 5px;
   margin-bottom: 5px;
-  background-color: #236c9c;
+  background-color: rgb(233, 103, 16);
   border-radius: 25%;
 }
 .profileMain {
-  background: rgb(36, 39, 123);
+  background: rgb(177, 48, 31);
   width: 70%;
   height: 220px;
   position: relative;
@@ -773,22 +775,12 @@ section {
   left: 30%;
 }
 .profileSide {
-  background: linear-gradient(
-    90deg,
-    rgba(36, 39, 123, 1) 99%,
-    rgba(255, 255, 255, 1) 99%
-  );
+  background: linear-gradient(90deg, rgb(177, 48, 31) 99%, #ffee00 99%);
   width: 30%;
   height: 220px;
   position: absolute;
   text-align: center;
   top: 0;
-}
-.text-muted {
-  font-size: 12px;
-  font-family: "AlphaCentauri", sans-serif;
-  color: #00ffaa;
-  padding-left: 5%;
 }
 .infoLabel {
   color: #00ffaa;
@@ -824,7 +816,7 @@ section {
   font-size: 24px;
   font-family: "AlphaCentauri", sans-serif;
   background: none;
-  color: #18d5e2be;
+  color: #0059ff;
   text-shadow: -1px -1px 2px #485c5a, 2px 2px 4px #ffee00;
   position: absolute;
   right: 7.5%;
@@ -838,7 +830,7 @@ section {
   font-size: 24px;
   font-family: "AlphaCentauri", sans-serif;
   background: none;
-  color: #18d5e2be;
+  color: #0059ff;
   text-shadow: -1px -1px 2px #485c5a, 2px 2px 4px #ffee00;
   position: absolute;
   right: 0;
@@ -864,7 +856,7 @@ section {
   border: #ffee00 2px solid;
   border-radius: 8px;
   font-family: "Revamped", sans-serif;
-  color: #24277b;
+  color: rgb(177, 48, 31);
   text-shadow: -2px -2px 4px #485c5a, 2px 2px 4px #18d5e2be, 0 2px 4px #ffee00;
 }
 .form-control {
@@ -925,13 +917,13 @@ section {
   margin-bottom: 1%;
 }
 .modal-header {
-  background-color: #24277b;
+  background-color: rgb(177, 48, 31);
 }
 .modal-body {
-  background-color: #363986;
+  background-color: rgb(179, 71, 57);
 }
 .modal-footer {
-  background-color: #24277b;
+  background-color: rgb(177, 48, 31);
 }
 .modal-title {
   font-family: "Revamped", sans-serif;
@@ -940,8 +932,7 @@ section {
     -2px 2px 5px #c72267be;
 }
 audio::-webkit-media-controls-panel {
-  background-color: #24277b;
-  color: #0ce94e;
+  background-color: rgb(177, 48, 31);
 }
 audio {
   border: #ffee00 2px solid;
@@ -955,23 +946,23 @@ audio::-webkit-media-controls-current-time-display {
   margin-left: 10px;
 }
 audio::-webkit-media-controls-time-remaining-display {
-  color: #c72267;
+  color: #4c00ff;
   font-family: "B81", sans-serif;
   margin-top: -3px;
 }
 audio::-webkit-media-controls-play-button {
-  background-color: #3a3eaade;
+  background-color: rgb(182, 76, 62);
   border-radius: 50%;
 }
 .sidebar {
-  background-color: #0e1058ab;
+  background-color: rgba(216, 56, 35, 0.55);
   padding-top: 2px;
   height: 877px;
   width: 190px;
   display: block;
   margin-left: -24%;
   margin-top: -56.3%;
-  border-right: #000000 4px solid;
+  border-right: #000000 3px solid;
   border-image: linear-gradient(
       to bottom,
       rgb(125, 184, 17),
@@ -1052,7 +1043,6 @@ audio::-webkit-media-controls-play-button {
   right: 1%;
 }
 .funcButtons:active {
-  box-shadow: -3px 3px 3px #00e6f6c5;
   background-color: #24277b;
   color: #ffee00;
 }
@@ -1116,7 +1106,7 @@ audio::-webkit-media-controls-play-button {
   height: 50px;
   margin-bottom: 2%;
   background: none;
-  background-image: url(icons/iconX.png);
+  background-image: url(/icons/iconX.png);
   position: absolute;
   border: #ff0055 1px inset;
   border-radius: 4px;
@@ -1128,7 +1118,7 @@ audio::-webkit-media-controls-play-button {
   height: 380px;
   width: 90%;
   margin: auto;
-  background-color: #363986;
+  background-color: rgba(212, 70, 51, 0.55);
   border-top: 2px dotted #ffee00;
   border-bottom: 4px dashed #ffee00;
 }
@@ -1155,7 +1145,7 @@ audio::-webkit-media-controls-play-button {
 
 .calcButtons {
   font-family: "B81", sans-serif;
-  background-color: #24277b;
+  background-color: rgba(216, 56, 35, 0.55);
   color: white;
   border: solid black 0.5px;
   width: 100%;

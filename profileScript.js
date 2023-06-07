@@ -8,7 +8,7 @@ const cancelBtn = document.getElementById("cancelBtn");
 const fetchUserInfoURL =
   "https://localhost:7239/api/RequestHandling/fetchUserInfo";
 const updateUserInfoURL =
-  "https://localhost:7239/api/RequestHand/updateUserInfo";
+  "https://localhost:7239/api/RequestHandling/updateInfo";
 
 window.onload = async function () {
   let email = document.getElementById("email");
@@ -49,10 +49,10 @@ window.onload = async function () {
     }
   });
   saveBtn.addEventListener("click", async function () {
-    emailInput = document.getElementById("emailInput");
-    usernameInput = document.getElementById("usernameInput");
-    displayNameInput = document.getElementById("displayNameInput");
-    roleInput = document.getElementById("roleInput");
+    emailInput = document.getElementById("emailInput").value;
+    usernameInput = document.getElementById("usernameInput").value;
+    displayNameInput = document.getElementById("displayNameInput").value;
+    roleInput = document.getElementById("roleInput").value;
     if (
       emailInput.trim() === "" ||
       usernameInput.trim() === "" ||
@@ -71,11 +71,13 @@ window.onload = async function () {
       existingInfo[i].style.display = "block";
     }
     var response = await updateUserInfo(
+      uid,
       emailInput,
       usernameInput,
       displayNameInput,
       roleInput
     );
+    console.log(response);
   });
 };
 async function fetchUserInfo(userId) {
@@ -110,7 +112,7 @@ async function updateUserInfo(
   newRole
 ) {
   let resp = await axios({
-    method: "post",
+    method: "put",
     url: updateUserInfoURL,
     data: {
       userId: userId,
