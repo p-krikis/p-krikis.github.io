@@ -146,6 +146,12 @@ input {
   font-size: 18px;
   text-shadow: -3px -3px 0px #485c5a, 2px 2px 4px #00e6f6;
 }
+.edit:hover,
+.cancel:hover,
+.save:hover {
+  border-color: #ffee00;
+  background-color: #2f3285;
+}
 .cancel,
 .save {
   display: none;
@@ -177,6 +183,10 @@ input {
   color: #24277b;
   font-size: 18px;
   text-shadow: -3px -3px 0px #485c5a, 2px 2px 4px #00e6f6;
+}
+.delete:hover {
+  background-color: #e65936;
+  border-color: #ffee00;
 }
 @font-face {
   font-family: "FutureTechno";

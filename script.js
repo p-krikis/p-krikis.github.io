@@ -47,13 +47,7 @@ window.onload = function () {
     enableButtons();
     profileButton.style.display = "block";
   }
-
-  //const profileModal = document.querySelector(".profileModal");
-  //var profModal = new bootstrap.Modal(profileModal, {});
-  // var myModal = new bootstrap.Modal(
-  //   document.getElementById("profileModal"),
-  //   options
-  // );
+  loadTheme();
 
   const profileBtn = document.getElementById("profile");
 
@@ -220,19 +214,18 @@ window.onload = function () {
   profileEdit.addEventListener("click", function () {
     redirectToProfile();
   });
-
-  //dark/light mode
-
-  ////////////////////////////////
-  //REPLACE WITH CCS FILE LATER//
-  //////////////////////////////
-
   appearanceMode.addEventListener("click", function () {
-    var img = document.getElementById("appearanceButton");
-    if (img.src.match("icons/iconLight.png")) {
-      img.src = "icons/iconDark.png";
+    let themeSelected = document.getElementById("themeLink");
+    let theme = themeSelected.getAttribute("href");
+    if (theme === "/ALTthemes/theme1.css") {
+      themeSelected.setAttribute("href", "/ALTthemes/theme2.css");
+      localStorage.setItem("themeSelected", "theme2");
+    } else if (theme === "/ALTthemes/theme2.css") {
+      themeSelected.setAttribute("href", "/ALTthemes/theme3.css");
+      localStorage.setItem("themeSelected", "theme3");
     } else {
-      img.src = "icons/iconLight.png";
+      themeSelected.setAttribute("href", "/ALTthemes/theme1.css");
+      localStorage.setItem("themeSelected", "theme1");
     }
   });
   signupSubmit.addEventListener("click", function () {
@@ -535,4 +528,15 @@ function clearList() {
 }
 function redirectToWeather() {
   window.location.href = "weather.html";
+}
+function loadTheme() {
+  let themeSelected = document.getElementById("themeLink");
+
+  if (localStorage.getItem("themeSelected" === "theme1")) {
+    themeSelected.setAttribute("href", "/ALTthemes/theme1.css");
+  } else if (localStorage.getItem("themeSelected" === "theme2")) {
+    themeSelected.setAttribute("href", "/ALTthemes/theme2.css");
+  } else if (localStorage.getItem("themeSelected" === "theme3")) {
+    themeSelected.setAttribute("href", "/ALTthemes/theme3.css");
+  }
 }
